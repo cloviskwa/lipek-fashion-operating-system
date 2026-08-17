@@ -18,8 +18,8 @@ As of this Phase 0 audit (2026-08-17): Vendure Core current stable is **3.7.0**;
         │                                                │
  Next.js Web Store (apps/storefront)                Vendure React Dashboard
  PWA / Mobile Apps (apps/mobile/*)                  + LIPEK Dashboard Extensions
- Customer Account                                   (apps/staff-console-extensions)
- AI Assistant (Phase 9+)
+ Customer Account                                   (colocated per-plugin:
+ AI Assistant (Phase 9+)                              apps/server/src/plugins/*/dashboard)
         │                                                │
         └────────────────────────┬───────────────────────┘
                                  │

@@ -1,4 +1,3 @@
-\
 # CLAUDE.md
 
 This is the Claude Code entry point for the LIPEK platform monorepo. The full operating contract — precedence rules, where things live, operating rules, the do-not list, and phase discipline — lives in [`AGENTS.md`](AGENTS.md) and applies identically here; this file exists only because Claude Code looks for it by name.

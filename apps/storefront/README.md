@@ -1,4 +1,3 @@
-\
 # apps/storefront
 
 Not yet scaffolded. Bootstrapped by task `FOUND-014` via `@vendure/create`'s official Next.js storefront starter (current: Next.js 16 / React 19 — verified as of this repo's Phase 0 audit; re-verify at bootstrap time per `AGENTS.md`).

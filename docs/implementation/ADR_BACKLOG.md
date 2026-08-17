@@ -1,6 +1,6 @@
 # Architecture Decision Record Backlog
 
-**Status:** Authoritative (backlog) — **all 11 items resolved as of 2026-08-17**; see `docs/adr/ADR-0001` through `ADR-0011` for the accepted decisions and rationale. This document is retained as the historical record of *why* each decision was open and what was considered; it is no longer the place to look for current status — the individual ADR files are.
+**Status:** Authoritative (backlog) — **all 12 original items resolved as of 2026-08-17**; see `docs/adr/ADR-0001` through `ADR-0012` for the accepted decisions and rationale. A 13th ADR (`ADR-0013`, Dashboard extension colocation) was added during the pre-Phase-1 architecture normalization pass — it is an architecture correction discovered by re-verifying the official Vendure Dashboard extension model, not a pre-existing backlog item, so it is not listed in this file's resolution table; see `docs/adr/ADR-0013-dashboard-extension-colocation.md` directly. This document is retained as the historical record of *why* each decision was open and what was considered; it is no longer the place to look for current status — the individual ADR files are.
 **Purpose:** Track every open technical decision the source of truth deliberately leaves unresolved (SOT §0.3 "PLANNED/PROVISIONAL/UNDECIDED"), plus decisions introduced by this engagement's additional requirements (MFA, social login, mobile apps, theming). Do not invent decisions that aren't genuinely open.
 
 ## Resolution Summary (2026-08-17)
@@ -18,6 +18,8 @@
 | [ADR-0009](../adr/ADR-0009-hosting-provider.md) | No vendor selected — Docker Compose parity mandated now, vendor chosen in Phase 11 | Deferred by design |
 | [ADR-0010](../adr/ADR-0010-aeo-strategy.md) | `llms.txt` + structured Q&A, sequenced after SEO stabilizes (Phase 9) | **Accepted (final)** |
 | [ADR-0011](../adr/ADR-0011-theming-token-ownership.md) | Single token source in `packages/ui`, per-renderer bridges | **Accepted (final)** |
+| [ADR-0012](../adr/ADR-0012-typescript-version-pin.md) | Pin TypeScript to the 5.9.x line; explicitly do not adopt 7.x (native compiler, no stable API/typescript-eslint support yet) | **Accepted (final)** — added during the pre-Phase-1 architecture normalization pass, 2026-08-17 |
+| [ADR-0013](../adr/ADR-0013-dashboard-extension-colocation.md) *(not an original backlog item — see note above)* | Remove `apps/staff-console-extensions`; colocate each plugin's Dashboard extension at `apps/server/src/plugins/<name>/dashboard/` | **Accepted (final)** — added during the pre-Phase-1 architecture normalization pass, 2026-08-17 |
 
 Nothing in this plan is blocked by an unresolved MUST-DECIDE-BEFORE-IMPLEMENTATION item. The four items marked "provisional" and the two marked "deferred by design" are explicitly not blocking — see each ADR's Consequences section for exactly what they gate (all are production-readiness gates, not implementation-start gates).
 

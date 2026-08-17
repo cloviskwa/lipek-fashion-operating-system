@@ -1,6 +1,7 @@
 # Target Repository Structure
 
 **Status:** Authoritative (derived from SOT §0A, extended for mobile/theming/AEO/MFA requirements added in this engagement)
+**Revision note (2026-08-17):** the Dashboard-extension architecture below was corrected during the pre-Phase-1 architecture normalization pass — `apps/staff-console-extensions` (this document's original proposal) has been **removed** in favor of colocating each plugin's Dashboard extension inside that plugin (`apps/server/src/plugins/<name>/dashboard/`), matching the official Vendure Dashboard extension model verified against current docs. See `docs/adr/ADR-0013-dashboard-extension-colocation.md` for the full rationale. This document has been updated in place to reflect that correction; it does not preserve the superseded design.
 **Does not restructure anything yet** — this is the destination architecture and the migration plan to reach it. No file moves happen until Phase 1 (`FOUND-013`).
 
 ---
@@ -11,20 +12,30 @@
 lipek-platform/
 │
 ├── apps/
-│   ├── server/                       # Vendure Core + NestJS plugins + Vendure Dashboard host
+│   ├── server/                       # Vendure Core + NestJS plugins + the aggregate Vendure Dashboard build
+│   │   ├── vite.config.mts               # Dashboard build (vendureDashboardPlugin), scans plugins for dashboard/ extensions
+│   │   ├── tsconfig.dashboard.json        # includes "src/plugins/**/dashboard/*"
 │   │   └── src/
 │   │       ├── plugins/
 │   │       │   ├── lipek-content/        # CMS: pages, sections, nav, banners, FAQs, policies, articles, SEO
+│   │       │   │   └── dashboard/         # colocated Dashboard extension (pages/forms/widgets for this plugin)
 │   │       │   ├── lipek-security/       # MFA (TOTP/WebAuthn), social auth bridging, RBAC extensions, audit log
+│   │       │   │   └── dashboard/         # MFA enrollment enforcement UI, audit log viewer
 │   │       │   ├── tailoring/
+│   │       │   │   └── dashboard/         # tailor assignment/workload, production dashboard
 │   │       │   ├── alterations/
+│   │       │   │   └── dashboard/         # alteration queue, QC screen
 │   │       │   ├── laundry/
+│   │       │   │   └── dashboard/         # laundry operations dashboard, pickup/delivery assignment
 │   │       │   ├── appointments/
 │   │       │   ├── crm/
+│   │       │   │   └── dashboard/         # Customer 360, leads/opportunities, support cases, AI approval queue
 │   │       │   ├── loyalty/
 │   │       │   ├── documents/
+│   │       │   │   └── dashboard/         # staff order/receipt/refund actions extending native Order screens
 │   │       │   ├── customer-experience/  # wishlist, reviews, saved looks
 │   │       │   ├── analytics-events/
+│   │       │   │   └── dashboard/         # KPI dashboard, operations dashboard, executive shell widgets
 │   │       │   └── integrations/         # payment/email/SMS/shipping provider adapters
 │   │       ├── vendure-config.ts
 │   │       └── ...
@@ -37,8 +48,6 @@ lipek-platform/
 │   │   │   ├── theme/                 # dark/light theme provider, token bridge
 │   │   │   └── seo/                   # metadata + JSON-LD + AEO (llms.txt, structured Q&A) builders
 │   │   └── ...
-│   │
-│   ├── staff-console-extensions/     # LIPEK-authored Vendure Dashboard route/widget extensions (bundled into server at build time; kept as its own app for independent review/testing)
 │   │
 │   ├── mobile/                       # Customer + delivery/courier + staff native app shells (Capacitor or chosen framework per ADR-0007), consuming the same Shop/Admin GraphQL contracts
 │   │   ├── customer/
@@ -95,10 +104,10 @@ lipek-platform/
 For each top-level unit: what belongs there, what must never belong there, and what it depends on.
 
 ### `apps/server`
-- **Responsibility:** system of record for commerce, content, services, CRM, documents. Owns PostgreSQL schema and all migrations. Hosts the Vendure Admin API, Shop API, and the Vendure Dashboard (via `@vendure/dashboard` mounted/served by this app).
-- **Belongs here:** Vendure plugins, GraphQL API extensions, domain entities, event listeners, background jobs, payment/email/SMS provider adapters, MFA/social-auth strategies, RBAC/permission definitions, audit logging.
-- **Must not belong here:** any customer-facing rendering/UI, direct calls out to the AI service's model provider (the AI service calls *into* `apps/server`'s APIs, never the reverse for model inference), hard-coded business content that staff should edit.
-- **Depends on:** PostgreSQL, Redis/BullMQ (production), object storage. Is depended on by `apps/storefront`, `apps/mobile/*`, `apps/ai` (as a tool-calling target), `apps/staff-console-extensions` (build-time bundling target).
+- **Responsibility:** system of record for commerce, content, services, CRM, documents. Owns PostgreSQL schema and all migrations. Hosts the Vendure Admin API, Shop API, and **the aggregate Vendure Dashboard build** — one Vite SPA (`vite.config.mts` + `vendureDashboardPlugin`) assembled from every plugin's own colocated `dashboard/` extension folder (`apps/server/src/plugins/<name>/dashboard/`), served by `@vendure/core`'s `DashboardPlugin` or hosted standalone. This is the official Vendure Dashboard extension model, verified against current docs — see `docs/adr/ADR-0013-dashboard-extension-colocation.md`. There is no separate Dashboard-extensions app.
+- **Belongs here:** Vendure plugins (each including its own `dashboard/` extension source where it has staff-facing screens), GraphQL API extensions, domain entities, event listeners, background jobs, payment/email/SMS provider adapters, MFA/social-auth strategies, RBAC/permission definitions, audit logging, the Dashboard build config (`vite.config.mts`, `tsconfig.dashboard.json`) and any genuinely shell-level (non-plugin-specific) Dashboard branding/theme-bridge code.
+- **Must not belong here:** any customer-facing rendering/UI, direct calls out to the AI service's model provider (the AI service calls *into* `apps/server`'s APIs, never the reverse for model inference), hard-coded business content that staff should edit, dashboard extension code that isn't colocated with its owning plugin (do not reintroduce a separate dashboard-extensions app or directory outside `src/plugins/*/dashboard`).
+- **Depends on:** PostgreSQL, Redis/BullMQ (production), object storage. Is depended on by `apps/storefront`, `apps/mobile/*`, `apps/ai` (as a tool-calling target).
 
 ### `apps/storefront`
 - **Responsibility:** customer experience rendering layer (SOT §3.1 "renderer, not system of record"). SSR/RSC via Next.js App Router, PWA shell, AEO surface (`llms.txt`, structured content), dark/light theme UI, AI chat UI (calling a BFF route into `apps/ai`).
@@ -106,16 +115,10 @@ For each top-level unit: what belongs there, what must never belong there, and w
 - **Must not belong here:** Admin API credentials, business rule logic that should live in Vendure plugins, hard-coded catalog/navigation/promotions data.
 - **Depends on:** `apps/server` Shop API, `packages/ui`, `packages/graphql`, `apps/ai` (AI BFF route only).
 
-### `apps/staff-console-extensions`
-- **Responsibility:** source location for LIPEK's Vendure Dashboard extensions (custom routes, widgets, forms, tables) for Tailoring, Alterations, Laundry, CRM, Content, Documents, Loyalty, AI Escalations, Analytics/Operations, and the MFA/security administration screens. Kept as a distinct app (rather than inline under `apps/server`) purely for independent linting/testing/review of dashboard-extension code; it is still built and served as part of the Dashboard bundle.
-- **Belongs here:** React (Dashboard SDK) components/pages, dashboard navigation registration, Dashboard-side forms and widgets.
-- **Must not belong here:** business logic/validation that should live server-side in `apps/server` plugins (the Dashboard extension calls the Admin API; it does not reimplement domain rules).
-- **Depends on:** `apps/server` Admin API/GraphQL schema, `packages/ui`, `packages/graphql`.
-
 ### `apps/mobile`
 - **Responsibility:** app-ready packaging of the platform for three distinct audiences — **customer**, **delivery/courier**, and **staff/admin** — satisfying the "app-ready (Android, iOS)" requirement. Each sub-app is a thin native/hybrid shell around the same backend contracts; no duplicate business logic.
 - **Belongs here:** native shell configuration (Capacitor or chosen alternative per ADR-0007), push-notification wiring, device-specific UX (camera for garment/alteration photo upload, geolocation for delivery), app-store metadata.
-- **Must not belong here:** a second copy of storefront or dashboard business logic — mobile apps consume the same GraphQL APIs as `apps/storefront`/`apps/staff-console-extensions`, ideally wrapping shared `packages/ui` components where the framework choice allows.
+- **Must not belong here:** a second copy of storefront or dashboard business logic — mobile apps consume the same GraphQL APIs as `apps/storefront` and the Dashboard (`apps/server`'s aggregate build), ideally wrapping shared `packages/ui` components where the framework choice allows.
 - **Depends on:** `apps/server` (Shop/Admin API), `packages/ui`, `packages/graphql`.
 
 ### `apps/ai`
@@ -125,7 +128,7 @@ For each top-level unit: what belongs there, what must never belong there, and w
 - **Depends on:** PostgreSQL + pgvector, authorized tool endpoints exposed by `apps/server` (never raw SQL), `apps/storefront`'s AI BFF route as its inbound entry point.
 
 ### `packages/ui`
-- **Responsibility:** shared, framework-agnostic-where-possible design system: tokens (including the dark/light theme token pairs), primitives (`Container`, `Section`, `Cta`, `Card`, `Badge` — migrated from the current prototype), and composed patterns reused across storefront, dashboard extensions, and mobile where feasible.
+- **Responsibility:** shared, framework-agnostic-where-possible design system: tokens (including the dark/light theme token pairs), primitives (`Container`, `Section`, `Cta`, `Card`, `Badge` — migrated from the current prototype), and composed patterns reused across storefront, each plugin's colocated Dashboard extension, and mobile where feasible. If genuine cross-plugin Dashboard-component duplication emerges, a `packages/dashboard-ui` addition may be introduced then — not created speculatively now (see `ADR-0013`).
 - **Must not belong here:** business/domain logic, API calls, anything specific to one app's routing.
 - **Depends on:** nothing internal; everything else may depend on it.
 
@@ -165,9 +168,9 @@ The four requirements this engagement explicitly added beyond the SOT's own text
 
 | Concern | Where it lives | Why |
 |---|---|---|
-| **MFA + social login (Google/Apple/email) + security hardening** | `apps/server/src/plugins/lipek-security/` (server-side strategies, TOTP/WebAuthn, RBAC, audit log) + `apps/storefront` auth UI/redirect handling + `apps/staff-console-extensions` for admin-side MFA enforcement screens | Auth is a Vendure `AuthenticationStrategy` concern (server-authoritative); no app may implement its own parallel identity store (SOT §52B "no shadow copies of core customer data"). |
+| **MFA + social login (Google/Apple/email) + security hardening** | `apps/server/src/plugins/lipek-security/` (server-side strategies, TOTP/WebAuthn, RBAC, audit log) + `apps/storefront` auth UI/redirect handling + `apps/server/src/plugins/lipek-security/dashboard` for admin-side MFA enforcement/audit-log screens | Auth is a Vendure `AuthenticationStrategy` concern (server-authoritative); no app may implement its own parallel identity store (SOT §52B "no shadow copies of core customer data"). |
 | **App-readiness (Android/iOS) for customers, delivery, admin** | `apps/mobile/{customer,delivery,staff}` | Kept separate from `apps/storefront` because each audience has a different auth scope, permission set, and release cadence, while still consuming the same backend contracts. |
-| **Dark/light theme** | Tokens in `packages/ui`, provider/toggle logic in each consuming app (`apps/storefront/lib/theme`, dashboard extension theming hooks, mobile theme bridge) | Theming is a design-system concern (single source of tokens) with per-app runtime wiring (each renderer applies tokens differently: CSS custom properties on web, native theming on mobile). |
+| **Dark/light theme** | Tokens in `packages/ui`, provider/toggle logic in each consuming renderer (`apps/storefront/lib/theme`, the aggregate Dashboard build's theme-bridge entry at `apps/server/vite.config.mts`, mobile theme bridge) | Theming is a design-system concern (single source of tokens) with per-renderer runtime wiring (each renderer applies tokens differently: CSS custom properties on web, native theming on mobile). |
 | **SEO + AEO** | `apps/storefront/lib/seo` (metadata, JSON-LD, `llms.txt`, structured Q&A/knowledge routes) sourced from `LipekContentPlugin` and catalog data in `apps/server` | AEO is a storefront rendering concern over backend-owned content, exactly like traditional SEO — no separate service needed. |
 
 ---
@@ -175,7 +178,7 @@ The four requirements this engagement explicitly added beyond the SOT's own text
 ## 4. Dependency Direction Rules
 
 1. `apps/*` may depend on `packages/*`. `packages/*` must never depend on `apps/*`.
-2. `apps/storefront`, `apps/staff-console-extensions`, and `apps/mobile/*` depend on `apps/server`'s published API contracts (GraphQL schema/`packages/graphql`), never on its internal modules or database directly.
+2. `apps/storefront` and `apps/mobile/*` depend on `apps/server`'s published API contracts (GraphQL schema/`packages/graphql`), never on its internal modules or database directly. Dashboard extensions are colocated *inside* `apps/server` (`src/plugins/*/dashboard`) precisely so they can call the Admin API through the same in-repo schema without a cross-app boundary — they still must not reach into plugin internals outside the Admin API surface.
 3. `apps/ai` depends on `apps/server`'s authorized tool endpoints, never on the database directly (SOT §31, §52C).
 4. No app may write to another app's data without going through its owning API (SOT §52B "no service is allowed to silently create shadow copies").
 5. `docs/` and `infra/` are read by humans/CI/deployment tooling, not imported by application code.

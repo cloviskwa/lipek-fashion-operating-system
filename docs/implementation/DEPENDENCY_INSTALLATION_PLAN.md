@@ -85,7 +85,7 @@ Each entry: package/service, purpose, app/module, phase introduced, runtime/dev/
 | S3-compatible SDK | Production object storage | `apps/server` | 11 (or earlier if asset volume demands it) | runtime | Pending **ADR-0003** | Verify at selection | — |
 | `@opentelemetry/*` packages | Observability/tracing | `apps/server`, `apps/ai` | 11 | runtime | Current stable, matched to chosen monitoring backend | Apache-2.0 | — |
 | Vitest | Unit/integration test runner | all apps/packages | 1 (introduce early, not deferred to 11) | dev | Current stable | MIT | — |
-| Playwright | E2E tests | `apps/storefront`, `apps/staff-console-extensions` | 3–4 (introduce with first real user journeys) | dev | Current stable | Apache-2.0 | — |
+| Playwright | E2E tests | `apps/storefront`, `apps/server` (Dashboard extension E2E, colocated per plugin under `src/plugins/*/dashboard`) | 3–4 (introduce with first real user journeys) | dev | Current stable | Apache-2.0 | — |
 | axe-core / `@axe-core/playwright` | Accessibility test integration | `apps/storefront` | 3 | dev | Current stable | MPL-2.0 | — |
 | k6 | Load/performance testing | infra/CI | 11 | dev/infra | Current stable | AGPL-3.0 (CLI use only, does not affect app licensing) | — |
 

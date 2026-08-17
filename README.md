@@ -1,4 +1,3 @@
-\
 # LIPEK Platform
 
 The LIPEK Intelligent Fashion Commerce & Services Platform — a Vendure Core + NestJS commerce backend, a Next.js customer storefront, a unified Vendure React Dashboard staff backend, dedicated tailoring/alterations/laundry/CRM/loyalty domain plugins, and a Mastra-based AI layer, organized as a single pnpm monorepo.
@@ -20,9 +19,11 @@ This repository replaces the earlier `LIPEK FASHION` static-prototype repository
 
 ```text
 apps/
-  server/                    Vendure Core + NestJS plugins + Dashboard (bootstrapped in FOUND-014)
+  server/                    Vendure Core + NestJS plugins (bootstrapped in FOUND-014)
+                             Each plugin colocates its own Dashboard extension:
+                               src/plugins/<name>/dashboard/  (per official Vendure Dashboard extension model)
+                             Aggregate Dashboard build config: vite.config.mts, tsconfig.dashboard.json
   storefront/                Next.js customer storefront (bootstrapped in FOUND-014)
-  staff-console-extensions/  LIPEK Vendure Dashboard extensions
   mobile/
     customer/                Capacitor customer app shell (seeded from the prior prototype's mobile-wrapper)
     delivery/                Native delivery/courier app (Phase 6, MOBILE-003)

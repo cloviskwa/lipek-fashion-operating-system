@@ -1,4 +1,3 @@
-\
 # LIPEK Platform — Agent Operating Contract
 
 This file is the standing operating contract for any coding agent (Claude Code, OpenAI Codex, or equivalent) working in this repository. It restates the operating rules from the master source of truth so they don't need to be rediscovered every session. **It does not replace the source of truth** — see Precedence below.
@@ -25,6 +24,7 @@ Code may never silently redefine the product. If reality requires a change to th
 - `docs/implementation/ADR_BACKLOG.md` + `docs/adr/ADR-XXXX-*.md` — open and resolved architecture decisions.
 - `_reference/legacy-prototype/` — the original static-content Next.js prototype, kept for reference only during `FOUND-020` (porting reusable assets into the real `apps/storefront`). It is **not** a live application and must never be treated as one.
 - `apps/mobile/customer/` — seeded from the prototype's Capacitor scaffold per `ADR-0007`. Not yet wired to a real storefront build.
+- **Dashboard extensions live inside `apps/server/src/plugins/<name>/dashboard/`, colocated with the plugin they belong to — never in a separate app.** There is no `apps/staff-console-extensions`; an earlier version of the target architecture proposed one, corrected via `docs/adr/ADR-0013-dashboard-extension-colocation.md` after verifying the official Vendure Dashboard extension model. Do not recreate it.
 - `packages/ui/src/primitives`, `packages/ui/src/tokens` — ported design-system starting points, to be expanded with dark/light token pairs (`THEME-001`).
 - `packages/testing/fixtures/content` — the prototype's placeholder copy, retained as seed/fixture data only, never a production content source.
 
