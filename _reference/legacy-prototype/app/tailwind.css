@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import '../styles/variables.css';
+
+@theme inline {
+  --font-heading: var(--font-heading-loaded), 'Georgia', serif;
+  --font-body: var(--font-body-loaded), 'Helvetica Neue', Arial, sans-serif;
+
+  --color-ink: var(--lipek-color-ink);
+  --color-ink-soft: var(--lipek-color-ink-soft);
+  --color-cream: var(--lipek-color-cream);
+  --color-cream-deep: var(--lipek-color-cream-deep);
+  --color-gold: var(--lipek-color-gold);
+  --color-gold-dark: var(--lipek-color-gold-dark);
+  --color-clay: var(--lipek-color-clay);
+  --color-line: var(--lipek-color-line);
+  --color-success: var(--lipek-color-success);
+
+  --radius-sm: var(--lipek-radius-sm);
+  --radius-md: var(--lipek-radius-md);
+  --radius-lg: var(--lipek-radius-lg);
+  --radius-pill: var(--lipek-radius-pill);
+
+  --container-lipek: var(--lipek-container-width);
+
+  --shadow-card: var(--lipek-shadow-card);
+  --shadow-lift: var(--lipek-shadow-lift);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .container-lipek {
+    width: 100%;
+    max-width: var(--container-lipek);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .container-lipek {
+      padding-inline: 32px;
+    }
+  }
+}

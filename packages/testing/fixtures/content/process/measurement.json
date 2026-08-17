@@ -1,0 +1,16 @@
+{
+  "slug": "measurement",
+  "order": 2,
+  "name": "Measurement",
+  "duration": "20–30 minutes",
+  "summary": "A full set of body measurements taken by hand, plus notes on posture and how you like clothes to sit.",
+  "body": [
+    "We take upward of 20 individual measurements depending on the garment — not just chest and waist, but shoulder slope, arm swing, posture and stance, which off-the-rack sizing never accounts for.",
+    "Your measurements and fit notes are saved to your personal pattern file, so future orders can skip straight to cutting without a repeat session.",
+    "For remote clients, we provide a guided self-measurement kit and review your numbers together on a video call before cutting begins."
+  ],
+  "seo": {
+    "title": "Measurement — Our Process",
+    "description": "How Lipek Fashion takes and records your measurements for a pattern that's kept on file for every future order."
+  }
+}

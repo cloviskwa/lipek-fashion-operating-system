@@ -1,0 +1,17 @@
+{
+  "slug": "weddings",
+  "name": "Weddings",
+  "summary": "Bridal gowns, groom's suits and coordinated bridal party looks from real Lipek weddings.",
+  "accentColor": "#8f6636",
+  "itemCount": 18,
+  "items": [
+    { "caption": "Silk dupioni bridal gown with hand-beaded bodice" },
+    { "caption": "Groom's three-piece suit in tropical wool" },
+    { "caption": "Bridesmaids in matching sage green tailored dresses" },
+    { "caption": "Agbada set for the groom's traditional ceremony" }
+  ],
+  "seo": {
+    "title": "Wedding Gallery",
+    "description": "Bridal gowns, groom's suits and bridal party looks tailored by Lipek Fashion."
+  }
+}

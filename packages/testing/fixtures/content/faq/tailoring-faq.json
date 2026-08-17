@@ -1,0 +1,31 @@
+{
+  "slug": "tailoring-faq",
+  "name": "Tailoring FAQ",
+  "summary": "Questions about measurements, fittings, fabric and how custom orders work.",
+  "items": [
+    {
+      "question": "How many fittings will I need?",
+      "answer": "Most structured garments like suits and gowns need two fittings. Shirts, trousers and simpler pieces are usually finalised in one. We'll confirm the exact number during your consultation."
+    },
+    {
+      "question": "Can I supply my own fabric?",
+      "answer": "Yes. Many traditional and occasion pieces are made from client-supplied fabric. Bring at least the yardage recommended for your garment style, and we'll confirm the exact amount needed at consultation."
+    },
+    {
+      "question": "Do you keep my measurements on file?",
+      "answer": "Yes — every client gets a saved pattern file after their first order, so future pieces can often skip a full measurement session."
+    },
+    {
+      "question": "Can I order remotely if I don't live near an atelier?",
+      "answer": "Yes. We support remote orders with a guided self-measurement kit, video consultations, and photo-based fitting checks before final stitching."
+    },
+    {
+      "question": "What if the final fit isn't right?",
+      "answer": "Any fit issue identified at final fitting is corrected free of charge within 14 days of delivery, as outlined in our refund policy."
+    }
+  ],
+  "seo": {
+    "title": "Tailoring FAQ",
+    "description": "Answers to common questions about measurements, fittings and custom fabric at Lipek Fashion."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hours": [
+    { "days": "Monday – Friday", "open": "09:00", "close": "18:30" },
+    { "days": "Saturday", "open": "10:00", "close": "16:00" },
+    { "days": "Sunday", "open": null, "close": null, "note": "Closed" }
+  ],
+  "locations": [
+    {
+      "id": "douala-atelier",
+      "name": "Lipek Fashion — Bonanjo Atelier",
+      "address": "Rue de la Mode 14, Bonanjo, Douala, Cameroon",
+      "phone": "+237 6 77 12 34 56",
+      "mapUrl": "https://maps.google.com/?q=Bonanjo+Douala+Cameroon",
+      "isFlagship": true
+    },
+    {
+      "id": "yaounde-showroom",
+      "name": "Lipek Fashion — Bastos Showroom",
+      "address": "Avenue Winston Churchill, Bastos, Yaoundé, Cameroon",
+      "phone": "+237 6 90 22 11 09",
+      "mapUrl": "https://maps.google.com/?q=Bastos+Yaounde+Cameroon",
+      "isFlagship": false
+    }
+  ],
+  "priceRanges": [
+    { "service": "Custom Suit (2-piece)", "from": 320, "to": 650, "currency": "USD" },
+    { "service": "Custom Trousers", "from": 65, "to": 140, "currency": "USD" },
+    { "service": "Custom Shirt", "from": 55, "to": 110, "currency": "USD" },
+    { "service": "Occasion Gown", "from": 240, "to": 900, "currency": "USD" },
+    { "service": "Traditional / African Print Outfit", "from": 90, "to": 380, "currency": "USD" },
+    { "service": "Alteration (basic hem/take-in)", "from": 8, "to": 25, "currency": "USD" },
+    { "service": "Alteration (full re-tailor)", "from": 30, "to": 90, "currency": "USD" },
+    { "service": "Laundry & Pressing (per item)", "from": 4, "to": 12, "currency": "USD" }
+  ]
+}

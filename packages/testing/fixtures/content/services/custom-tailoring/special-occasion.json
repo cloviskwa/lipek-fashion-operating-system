@@ -1,0 +1,26 @@
+{
+  "slug": "special-occasion",
+  "category": "custom-tailoring",
+  "name": "Special Occasion Wear",
+  "shortDescription": "Wedding, engagement and gala pieces built around your event date with dedicated fitting sessions.",
+  "heroImage": "/images/services/custom-tailoring/special-occasion.jpg",
+  "turnaround": "21–35 business days",
+  "priceFrom": 240,
+  "currency": "USD",
+  "fabricNotes": "Silk dupioni, satin, lace overlay, brocade and structured tulle, sourced or client-supplied.",
+  "highlights": [
+    "Dedicated timeline planning around your event date",
+    "Beadwork, embroidery and appliqué on request",
+    "Bridal party coordination for matching or complementary looks",
+    "Final fitting scheduled within a week of the event"
+  ],
+  "body": [
+    "Occasion pieces carry more pressure than everyday clothing — there's one date, and it isn't moving. We build a fitting timeline backwards from your event so there's always room for a final adjustment.",
+    "From wedding gowns and grooom's suits to gala dresses and engagement outfits, every piece is built with room for last-fitting tailoring as your day approaches.",
+    "We coordinate bridal parties on request, matching fabric, colour or silhouette across multiple garments."
+  ],
+  "seo": {
+    "title": "Wedding & Special Occasion Tailoring",
+    "description": "Bespoke wedding, engagement and gala wear built around your event timeline at Lipek Fashion."
+  }
+}

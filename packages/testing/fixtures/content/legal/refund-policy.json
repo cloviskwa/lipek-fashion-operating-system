@@ -1,0 +1,30 @@
+{
+  "slug": "refund-policy",
+  "title": "Refund Policy",
+  "effectiveDate": "2026-01-01",
+  "sections": [
+    {
+      "heading": "Deposits",
+      "body": [
+        "Deposits are non-refundable once fabric has been cut, as cutting is done specifically to your measurements. If you cancel before cutting begins, your deposit is refunded in full minus a 10% administrative fee."
+      ]
+    },
+    {
+      "heading": "Fit Corrections",
+      "body": [
+        "Any fit issue identified at your final fitting, or within 14 days of collection, will be corrected free of charge.",
+        "Requests for style changes unrelated to fit — a different sleeve length, added pockets, and similar — are treated as a new alteration and quoted separately."
+      ]
+    },
+    {
+      "heading": "Ready-to-Wear & Shop Items",
+      "body": [
+        "Unworn, unaltered ready-to-wear pieces purchased through our shop may be returned within 7 days of purchase for store credit. Custom-sized or altered shop items are final sale."
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Refund Policy",
+    "description": "Our policy on deposits, fit corrections and returns at Lipek Fashion."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "laundry",
+  "name": "Laundry & Garment Care",
+  "shortDescription": "Hand-finished laundering, pressing and preservation for tailored and delicate garments.",
+  "heroImage": "/images/services/laundry-hero.jpg",
+  "turnaround": "24–48 hours",
+  "priceFrom": 4,
+  "currency": "USD",
+  "highlights": [
+    "Wet-cleaning and dry-cleaning for suits, gowns and traditional wear",
+    "Hand-pressing with garment-specific steam settings",
+    "Stain treatment for silk, lace, brocade and embroidery",
+    "Seasonal storage preparation and garment bags"
+  ],
+  "body": [
+    "A well-made garment only stays well-made if it's cared for properly. Our laundry service is built around the same fabrics we cut every day — so we know exactly how a raw silk gown or a wool-blend suit needs to be handled.",
+    "Every item is inspected on arrival, cleaned with the gentlest method suited to its fabric, and hand-pressed rather than machine-pressed to protect stitching and structure.",
+    "Ask about our care plans for garments we've tailored for you — repeat clients get priority turnaround."
+  ],
+  "seo": {
+    "title": "Laundry & Garment Care",
+    "description": "Hand-finished dry cleaning, pressing and preservation for suits, gowns and traditional wear at Lipek Fashion."
+  }
+}

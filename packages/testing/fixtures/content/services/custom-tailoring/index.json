@@ -1,0 +1,24 @@
+{
+  "slug": "custom-tailoring",
+  "name": "Custom Tailoring",
+  "shortDescription": "Made-to-measure clothing cut from your own measurements, fabric choice and fit preferences.",
+  "heroImage": "/images/services/custom-tailoring-hero.jpg",
+  "turnaround": "10–21 business days",
+  "priceFrom": 55,
+  "currency": "USD",
+  "highlights": [
+    "Full consultation, measurement and fabric selection",
+    "Two fitting sessions before final delivery",
+    "House pattern kept on file for future orders",
+    "Suits, occasion wear, traditional outfits and everyday staples"
+  ],
+  "body": [
+    "Custom tailoring is the heart of Lipek Fashion. Every piece starts with a conversation about how you live in your clothes, not just how they should look on a hanger.",
+    "We take a full set of measurements, walk you through fabric and lining options, and cut a first pattern that's fitted on your body across two sessions before final delivery.",
+    "Explore our tailoring categories below, from formal suiting to traditional and African-print occasion wear."
+  ],
+  "seo": {
+    "title": "Custom Tailoring",
+    "description": "Made-to-measure suits, occasion wear and everyday clothing, cut and fitted by hand at Lipek Fashion."
+  }
+}

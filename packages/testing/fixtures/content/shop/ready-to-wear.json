@@ -1,0 +1,43 @@
+{
+  "slug": "ready-to-wear",
+  "name": "Ready-to-Wear",
+  "summary": "Small-batch, pre-cut pieces in standard sizing — the Lipek fit, without a fitting appointment.",
+  "products": [
+    {
+      "id": "rtw-1",
+      "name": "Linen-Blend Blazer, Sand",
+      "price": 145,
+      "currency": "USD",
+      "description": "Unstructured blazer in a breathable linen-cotton blend, cut for warm-climate everyday wear.",
+      "sizes": ["S", "M", "L", "XL"]
+    },
+    {
+      "id": "rtw-2",
+      "name": "Classic Oxford Shirt, White",
+      "price": 62,
+      "currency": "USD",
+      "description": "House-cut oxford shirt with a soft spread collar and single-button barrel cuff.",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      "id": "rtw-3",
+      "name": "Ankara Wrap Dress, Indigo Motif",
+      "price": 98,
+      "currency": "USD",
+      "description": "Wrap-style dress cut from bold indigo wax print, finished with a self-fabric tie belt.",
+      "sizes": ["S", "M", "L"]
+    },
+    {
+      "id": "rtw-4",
+      "name": "Wool-Blend Trousers, Charcoal",
+      "price": 88,
+      "currency": "USD",
+      "description": "Flat-front tailored trousers in a mid-weight wool blend, finished unhemmed for a free tailored hem in-store.",
+      "sizes": ["28", "30", "32", "34", "36"]
+    }
+  ],
+  "seo": {
+    "title": "Ready-to-Wear",
+    "description": "Small-batch ready-to-wear pieces from Lipek Fashion, cut in the house fit without a fitting appointment."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "casual",
+  "name": "Casual",
+  "summary": "Everyday separates and relaxed tailoring for clients building a considered wardrobe.",
+  "accentColor": "#b8894f",
+  "itemCount": 9,
+  "items": [
+    { "caption": "Unstructured cotton overshirt in olive twill" },
+    { "caption": "Tailored joggers paired with a fitted tee" }
+  ],
+  "seo": {
+    "title": "Casual Wear Gallery",
+    "description": "Everyday tailored separates made by Lipek Fashion."
+  }
+}

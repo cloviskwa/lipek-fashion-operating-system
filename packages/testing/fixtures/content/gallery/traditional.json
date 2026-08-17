@@ -1,0 +1,16 @@
+{
+  "slug": "traditional",
+  "name": "Traditional",
+  "summary": "Ankara, kente and bazin pieces for ceremonies, festivals and cultural celebrations.",
+  "accentColor": "#a44a3f",
+  "itemCount": 22,
+  "items": [
+    { "caption": "Kente stole and agbada for a naming ceremony" },
+    { "caption": "Ankara wax-print dress with matching headwrap" },
+    { "caption": "Bazin riche boubou for a festival appearance" }
+  ],
+  "seo": {
+    "title": "Traditional Fashion Gallery",
+    "description": "Ankara, kente and bazin outfits tailored by Lipek Fashion for ceremonies and celebrations."
+  }
+}

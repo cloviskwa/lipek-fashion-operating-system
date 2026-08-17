@@ -1,0 +1,27 @@
+{
+  "slug": "care-faq",
+  "name": "Garment Care FAQ",
+  "summary": "Questions about washing, storage and how to keep tailored garments looking new.",
+  "items": [
+    {
+      "question": "Can I machine wash a custom-tailored piece?",
+      "answer": "We recommend against it for structured garments like suits and gowns — the canvas, lining and shaping can shift. Use our laundry service or a trusted dry cleaner familiar with tailored construction."
+    },
+    {
+      "question": "How often should I have a suit professionally pressed?",
+      "answer": "Every 3–4 wears for regular use, or before and after long-term storage, keeps the structure and crease looking sharp."
+    },
+    {
+      "question": "How should I store traditional and beaded pieces?",
+      "answer": "Store flat or on a padded hanger inside a breathable garment bag, away from direct sunlight, to protect embroidery and beadwork from crushing or fading."
+    },
+    {
+      "question": "Do you offer garment repair after normal wear and tear?",
+      "answer": "Yes — our alterations bench handles button, lining and seam repairs on any garment, whether or not it was originally made by us."
+    }
+  ],
+  "seo": {
+    "title": "Garment Care FAQ",
+    "description": "Answers to common questions about washing, storing and maintaining tailored garments at Lipek Fashion."
+  }
+}

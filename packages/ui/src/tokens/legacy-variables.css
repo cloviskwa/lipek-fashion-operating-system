@@ -1,0 +1,47 @@
+/**
+ * Lipek Fashion design tokens.
+ * Theme-invariant custom properties consumed by src/app/tailwind.css's @theme block.
+ */
+:root {
+  /* Brand palette — deep ink, warm cream, brass/gold accent (tailoring-house feel) */
+  --lipek-color-ink: #201b16;
+  --lipek-color-ink-soft: #3a322a;
+  --lipek-color-cream: #faf6ef;
+  --lipek-color-cream-deep: #f1e9db;
+  --lipek-color-gold: #b8894f;
+  --lipek-color-gold-dark: #8f6636;
+  --lipek-color-clay: #a44a3f;
+  --lipek-color-white: #ffffff;
+  --lipek-color-line: #e4dac8;
+  --lipek-color-success: #3f7a52;
+
+  /* Typography */
+  --lipek-font-heading: 'Playfair Display', 'Georgia', serif;
+  --lipek-font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Radius */
+  --lipek-radius-sm: 6px;
+  --lipek-radius-md: 14px;
+  --lipek-radius-lg: 28px;
+  --lipek-radius-pill: 999px;
+
+  /* Spacing scale */
+  --lipek-space-3xs: 4px;
+  --lipek-space-2xs: 8px;
+  --lipek-space-xs: 12px;
+  --lipek-space-sm: 16px;
+  --lipek-space-md: 24px;
+  --lipek-space-lg: 40px;
+  --lipek-space-xl: 64px;
+  --lipek-space-2xl: 96px;
+  --lipek-space-3xl: 128px;
+
+  /* Layout */
+  --lipek-container-width: 1200px;
+  --lipek-section-space: 96px;
+  --lipek-section-space-sm: 56px;
+
+  /* Shadow */
+  --lipek-shadow-card: 0 20px 45px -25px rgba(32, 27, 22, 0.35);
+  --lipek-shadow-lift: 0 12px 30px -12px rgba(32, 27, 22, 0.28);
+}

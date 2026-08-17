@@ -1,0 +1,30 @@
+{
+  "slug": "shipping-policy",
+  "title": "Shipping Policy",
+  "effectiveDate": "2026-01-01",
+  "sections": [
+    {
+      "heading": "Local Delivery",
+      "body": [
+        "Finished garments can be collected in-atelier at no charge, or delivered within Douala and Yaoundé for a flat fee, arranged at your final fitting."
+      ]
+    },
+    {
+      "heading": "Nationwide & International Shipping",
+      "body": [
+        "For clients outside Douala and Yaoundé, we ship via tracked courier within Cameroon and internationally. Shipping cost is calculated by destination and garment weight and quoted before dispatch.",
+        "International shipments may be subject to customs duties in the destination country, which are the responsibility of the recipient."
+      ]
+    },
+    {
+      "heading": "Order Tracking",
+      "body": [
+        "A tracking number is sent by email or WhatsApp as soon as your order ships. Estimated delivery windows are 2–3 business days locally and 7–14 business days internationally."
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Shipping Policy",
+    "description": "Delivery, shipping and tracking information for orders placed with Lipek Fashion."
+  }
+}

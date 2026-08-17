@@ -1,0 +1,26 @@
+{
+  "slug": "casual-modern",
+  "category": "custom-tailoring",
+  "name": "Casual & Modern Wear",
+  "shortDescription": "Relaxed-fit jackets, tailored streetwear and everyday separates built with tailoring techniques.",
+  "heroImage": "/images/services/custom-tailoring/casual-modern.jpg",
+  "turnaround": "10–14 business days",
+  "priceFrom": 70,
+  "currency": "USD",
+  "fabricNotes": "Cotton twill, brushed cotton, denim, ponte knit and lightweight wool for unstructured pieces.",
+  "highlights": [
+    "Unstructured jackets built for everyday movement",
+    "Tailored streetwear silhouettes on request",
+    "Custom fit for layering pieces and outerwear",
+    "Small-batch capsule orders for personal wardrobes"
+  ],
+  "body": [
+    "Tailoring doesn't have to mean formal. This line applies the same fitting discipline — proper shoulder, clean drape, no pulling at the seams — to the clothes you actually wear most days.",
+    "Think unstructured jackets, tailored joggers, fitted overshirts and denim built to your measurements instead of a generic size run.",
+    "A favourite with clients building a small, considered wardrobe rather than buying in bulk."
+  ],
+  "seo": {
+    "title": "Casual & Modern Tailoring",
+    "description": "Relaxed-fit jackets and tailored everyday wear, built with proper tailoring technique, at Lipek Fashion."
+  }
+}

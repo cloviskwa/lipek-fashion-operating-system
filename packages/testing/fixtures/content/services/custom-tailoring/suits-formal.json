@@ -1,0 +1,26 @@
+{
+  "slug": "suits-formal",
+  "category": "custom-tailoring",
+  "name": "Suits & Formalwear",
+  "shortDescription": "Two- and three-piece suits, tuxedos and business formal, cut to your exact frame.",
+  "heroImage": "/images/services/custom-tailoring/suits-formal.jpg",
+  "turnaround": "14–21 business days",
+  "priceFrom": 320,
+  "currency": "USD",
+  "fabricNotes": "Italian wool blends, English worsted wool, tropical-weight wool for warm climates, and premium linen-wool blends for occasion suits.",
+  "highlights": [
+    "Structured or soft-shoulder construction to match your build",
+    "Choice of single- or double-breasted, notch or peak lapel",
+    "Half-canvas or full-canvas construction options",
+    "Matching waistcoat and trouser adjustments included"
+  ],
+  "body": [
+    "A suit is the one garment most people notice when it's wrong and never notice when it's right. We build ours from the shoulder out — the one seam that off-the-rack can never fix.",
+    "Choose your silhouette, lapel, vent and pocket details, then pick from our fabric library or bring your own cloth. Two fittings ensure the drape sits clean across the chest, back and sleeve.",
+    "Popular for weddings, board meetings and everything in between — ask about matching waistcoats and pocket square pairings."
+  ],
+  "seo": {
+    "title": "Custom Suits & Formalwear",
+    "description": "Bespoke two- and three-piece suits, tuxedos and business formalwear tailored to your frame at Lipek Fashion."
+  }
+}

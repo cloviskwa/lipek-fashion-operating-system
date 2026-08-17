@@ -1,0 +1,26 @@
+{
+  "slug": "african-fashion",
+  "category": "custom-tailoring",
+  "name": "Traditional & African Fashion",
+  "shortDescription": "Ankara, kente, bazin and lace outfits cut in contemporary or traditional silhouettes.",
+  "heroImage": "/images/services/custom-tailoring/african-fashion.jpg",
+  "turnaround": "12–20 business days",
+  "priceFrom": 90,
+  "currency": "USD",
+  "fabricNotes": "Ankara wax print, kente cloth, bazin riche, guipure and cord lace — client-supplied fabric welcome.",
+  "highlights": [
+    "Agbada, kaftan, boubou and dashiki construction",
+    "Fitted or flared silhouettes for women's traditional wear",
+    "Pattern-matching across multi-panel wax prints",
+    "Matching family or group outfits for ceremonies"
+  ],
+  "body": [
+    "Traditional fabric deserves a cut that respects the print. We plan panel placement before a single piece is cut, so bold Ankara or kente patterns land where they should — not chopped mid-motif at a seam.",
+    "From formal agbada and structured kaftans to fitted contemporary silhouettes in lace and bazin, every piece can be built traditional, modern, or somewhere in between.",
+    "A regular request for weddings, naming ceremonies and festivals — we coordinate matching outfits for families and groups."
+  ],
+  "seo": {
+    "title": "Traditional & African Fashion Tailoring",
+    "description": "Custom Ankara, kente, bazin and lace outfits cut in traditional or modern silhouettes at Lipek Fashion."
+  }
+}

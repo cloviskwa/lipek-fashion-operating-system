@@ -1,0 +1,31 @@
+{
+  "slug": "pricing-faq",
+  "name": "Pricing FAQ",
+  "summary": "Questions about cost, deposits, payment methods and what's included in your quote.",
+  "items": [
+    {
+      "question": "How is pricing determined?",
+      "answer": "Price depends on garment complexity, fabric choice and any embellishment such as beadwork or embroidery. You'll get a firm quote in writing after your consultation, before any deposit is due."
+    },
+    {
+      "question": "Do I need to pay a deposit?",
+      "answer": "Yes, a 50% deposit is required to begin cutting, with the balance due at final fitting before collection or delivery."
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept mobile money, bank transfer and cash in-atelier. Card payments are available at our Bastos showroom."
+    },
+    {
+      "question": "Are alterations to a Lipek-made garment charged separately?",
+      "answer": "Fit corrections identified within 14 days of your final fitting are free. Alterations requested after that window, or for style changes, are quoted separately."
+    },
+    {
+      "question": "Do prices include fabric?",
+      "answer": "Listed 'from' prices include standard house fabric options. Premium or imported fabric, and client-supplied fabric requiring extra cutting care, may adjust the final quote."
+    }
+  ],
+  "seo": {
+    "title": "Pricing FAQ",
+    "description": "Answers to common questions about pricing, deposits and payment at Lipek Fashion."
+  }
+}

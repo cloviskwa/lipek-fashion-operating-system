@@ -1,0 +1,24 @@
+{
+  "slug": "alterations",
+  "name": "Alterations",
+  "shortDescription": "Precise re-fitting for garments you already own — hems, waists, shoulders and full re-cuts.",
+  "heroImage": "/images/services/alterations-hero.jpg",
+  "turnaround": "2–5 business days",
+  "priceFrom": 8,
+  "currency": "USD",
+  "highlights": [
+    "Hemming, taking-in and letting-out for trousers, skirts and dresses",
+    "Shoulder and sleeve re-fitting for jackets and blazers",
+    "Zipper, button and lining repairs",
+    "Wedding and occasion-wear resizing with rush options"
+  ],
+  "body": [
+    "Bought off the rack but it doesn't quite sit right? Our alterations bench handles the fine adjustments that turn a good-enough garment into one that fits like it was made for you.",
+    "Every piece is pinned and fitted on you first — never guessed from measurements alone — so the final result reflects how the garment actually falls on your body.",
+    "We work on suits, dresses, trousers, skirts, coats and formalwear from any retailer, including delicate fabrics like silk, lace and structured tailoring."
+  ],
+  "seo": {
+    "title": "Garment Alterations",
+    "description": "Expert alterations for suits, dresses and everyday wear at Lipek Fashion. Hems, resizing and repairs fitted on you, not guessed."
+  }
+}

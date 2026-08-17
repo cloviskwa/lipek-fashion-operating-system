@@ -1,0 +1,43 @@
+{
+  "slug": "accessories",
+  "name": "Accessories",
+  "summary": "Pocket squares, ties, headwraps and finishing pieces cut from the same fabric library as our tailoring.",
+  "products": [
+    {
+      "id": "acc-1",
+      "name": "Silk Pocket Square, Gold Paisley",
+      "price": 24,
+      "currency": "USD",
+      "description": "Hand-rolled edge silk pocket square in a gold-on-navy paisley print.",
+      "sizes": ["One Size"]
+    },
+    {
+      "id": "acc-2",
+      "name": "Kente-Trim Necktie",
+      "price": 32,
+      "currency": "USD",
+      "description": "Classic navy necktie with a kente-cloth tip panel, self-tied width.",
+      "sizes": ["One Size"]
+    },
+    {
+      "id": "acc-3",
+      "name": "Ankara Headwrap",
+      "price": 18,
+      "currency": "USD",
+      "description": "Matching headwrap cut from our Ankara print offcuts, pairs with our traditional gallery pieces.",
+      "sizes": ["One Size"]
+    },
+    {
+      "id": "acc-4",
+      "name": "Leather Belt, Cognac",
+      "price": 40,
+      "currency": "USD",
+      "description": "Full-grain leather belt with a brushed brass buckle, cut to your trouser waist size.",
+      "sizes": ["30", "32", "34", "36", "38"]
+    }
+  ],
+  "seo": {
+    "title": "Accessories",
+    "description": "Pocket squares, ties, headwraps and belts from Lipek Fashion's in-house fabric library."
+  }
+}

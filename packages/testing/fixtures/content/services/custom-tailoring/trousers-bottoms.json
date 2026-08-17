@@ -1,0 +1,26 @@
+{
+  "slug": "trousers-bottoms",
+  "category": "custom-tailoring",
+  "name": "Trousers & Bottoms",
+  "shortDescription": "Tailored trousers, chinos and skirts cut to your rise, seat and leg shape.",
+  "heroImage": "/images/services/custom-tailoring/trousers-bottoms.jpg",
+  "turnaround": "7–12 business days",
+  "priceFrom": 65,
+  "currency": "USD",
+  "fabricNotes": "Wool suiting, cotton twill and chino cloth, and stretch-blend fabrics for tailored comfort.",
+  "highlights": [
+    "Flat-front or pleated construction",
+    "Custom rise, taper and break length",
+    "Extended waistband and side-adjuster options",
+    "Matching fabric to an existing jacket on request"
+  ],
+  "body": [
+    "Trousers fail more often on rise and seat than on anything else — two things a standard size chart can't account for. We measure both directly and cut accordingly.",
+    "Choose a flat-front or pleated cut, set your own break at the ankle, and pick a taper that matches how you actually want them to sit.",
+    "Bring in an existing jacket and we can match trousers to complete a suit, or build a stand-alone pair for everyday wear."
+  ],
+  "seo": {
+    "title": "Custom Trousers & Bottoms",
+    "description": "Tailored trousers, chinos and skirts cut to your rise, seat and leg shape at Lipek Fashion."
+  }
+}

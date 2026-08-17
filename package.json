@@ -1,0 +1,21 @@
+{
+  "name": "lipek-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LIPEK Intelligent Fashion Commerce & Services Platform — pnpm monorepo (Vendure Core, NestJS, Next.js, Mastra).",
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.9.4",
+    "typescript": "^5.9.3"
+  }
+}

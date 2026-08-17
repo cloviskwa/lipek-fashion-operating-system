@@ -1,0 +1,16 @@
+{
+  "slug": "consultation",
+  "order": 1,
+  "name": "Consultation",
+  "duration": "30–45 minutes",
+  "summary": "We talk through what you need it for, how you want it to look, and what budget makes sense.",
+  "body": [
+    "Every order starts with a conversation, not a form. In your consultation we discuss the occasion, how the garment fits into your existing wardrobe, and any references you've brought — photos, fabric swatches or a piece you already own and love.",
+    "We'll walk you through fabric options in person, explain construction choices (like canvas vs. fused for jackets), and give you a clear price and timeline before anything is cut.",
+    "Consultations happen in-atelier or over a video call for clients ordering remotely; fabric swatches can be posted ahead of a virtual session."
+  ],
+  "seo": {
+    "title": "Consultation — Our Process",
+    "description": "The first step at Lipek Fashion: a fabric, fit and budget conversation before anything is measured or cut."
+  }
+}

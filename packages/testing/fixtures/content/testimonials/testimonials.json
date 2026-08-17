@@ -1,0 +1,50 @@
+[
+  {
+    "id": "t1",
+    "name": "Amara N.",
+    "role": "Bride",
+    "quote": "My wedding gown fit better than anything I've ever worn off a rack — and the beadwork was even better than the sketch we agreed on.",
+    "rating": 5,
+    "service": "Special Occasion Wear"
+  },
+  {
+    "id": "t2",
+    "name": "Jean-Paul M.",
+    "role": "Corporate Client",
+    "quote": "I've ordered four suits over two years and every single one has needed zero alterations after the second fitting. That's rare.",
+    "rating": 5,
+    "service": "Suits & Formalwear"
+  },
+  {
+    "id": "t3",
+    "name": "Fatou D.",
+    "role": "Repeat Client",
+    "quote": "They matched the Ankara pattern perfectly across every panel — nothing chopped mid-print like I've had happen elsewhere.",
+    "rating": 5,
+    "service": "Traditional & African Fashion"
+  },
+  {
+    "id": "t4",
+    "name": "Grace T.",
+    "role": "First-time Client",
+    "quote": "I walked in nervous about my measurements and walked out with a blazer that finally fits my waist properly. Life-changing, honestly.",
+    "rating": 5,
+    "service": "Women's Tailoring"
+  },
+  {
+    "id": "t5",
+    "name": "Emmanuel K.",
+    "role": "Groom",
+    "quote": "Booked my fitting three weeks out from the wedding and they still hit the timeline with a full agbada set. Stress-free.",
+    "rating": 5,
+    "service": "Special Occasion Wear"
+  },
+  {
+    "id": "t6",
+    "name": "Linda A.",
+    "role": "Alterations Client",
+    "quote": "Brought in a dress I bought online that didn't fit at all — they saved it. Wouldn't have worn it otherwise.",
+    "rating": 4,
+    "service": "Alterations"
+  }
+]

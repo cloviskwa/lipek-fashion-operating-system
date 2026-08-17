@@ -1,0 +1,37 @@
+{
+  "slug": "terms-of-use",
+  "title": "Terms of Use",
+  "effectiveDate": "2026-01-01",
+  "sections": [
+    {
+      "heading": "Orders & Deposits",
+      "body": [
+        "A 50% deposit is required to begin any custom order. Cutting begins only after the deposit is received and measurements are confirmed at your fitting session.",
+        "Quoted turnaround times are estimates and may extend during peak wedding and festival seasons; we will notify you of any expected delay."
+      ]
+    },
+    {
+      "heading": "Fabric & Materials",
+      "body": [
+        "Client-supplied fabric is worked with care, but Lipek Fashion is not responsible for defects present in fabric provided by the client prior to cutting.",
+        "House fabric availability is subject to supplier stock; we will offer a comparable alternative if your selected fabric becomes unavailable."
+      ]
+    },
+    {
+      "heading": "Website Use",
+      "body": [
+        "Content on this website, including photography and garment designs, is the property of Lipek Fashion and may not be reproduced commercially without written permission."
+      ]
+    },
+    {
+      "heading": "Liability",
+      "body": [
+        "Lipek Fashion's liability for any order is limited to the value of that order. We are not liable for indirect losses such as missed events due to circumstances outside our reasonable control."
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Terms of Use",
+    "description": "The terms governing custom orders, deposits and website use at Lipek Fashion."
+  }
+}

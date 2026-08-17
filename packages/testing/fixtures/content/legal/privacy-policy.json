@@ -1,0 +1,37 @@
+{
+  "slug": "privacy-policy",
+  "title": "Privacy Policy",
+  "effectiveDate": "2026-01-01",
+  "sections": [
+    {
+      "heading": "Information We Collect",
+      "body": [
+        "When you book a fitting, place an order, or contact us, we collect your name, phone number, email address, and — where relevant to your order — body measurements and fit notes.",
+        "Our website may also collect basic analytics data such as pages visited and general location, used only to understand site usage."
+      ]
+    },
+    {
+      "heading": "How We Use Your Information",
+      "body": [
+        "Measurement and fit data is used solely to produce and adjust your garments and is kept on file so future orders don't require a repeat measuring session.",
+        "Contact details are used to confirm bookings, share order updates, and — only with your consent — send occasional style updates by email."
+      ]
+    },
+    {
+      "heading": "Data Sharing",
+      "body": [
+        "We do not sell your personal information. Measurement and order data is never shared with third parties outside of the payment processors required to complete your transaction."
+      ]
+    },
+    {
+      "heading": "Your Rights",
+      "body": [
+        "You may request a copy of the data we hold on you, ask us to correct it, or request deletion of your measurement file at any time by emailing hello@lipekfashion.com."
+      ]
+    }
+  ],
+  "seo": {
+    "title": "Privacy Policy",
+    "description": "How Lipek Fashion collects, uses and protects your personal and measurement data."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "womens-tailoring",
+  "category": "custom-tailoring",
+  "name": "Women's Tailoring",
+  "shortDescription": "Structured blazers, tailored trousers, sheath dresses and power suiting cut for the female form.",
+  "heroImage": "/images/services/custom-tailoring/womens-tailoring.jpg",
+  "turnaround": "12–18 business days",
+  "priceFrom": 140,
+  "currency": "USD",
+  "fabricNotes": "Stretch wool suiting, crepe, structured cotton twill and silk blends for occasion pieces.",
+  "highlights": [
+    "Blazers with princess seams for a true waist fit",
+    "Tailored trousers cut to your rise and leg shape",
+    "Sheath and wrap dresses built on a fitted block",
+    "Nursing- and maternity-friendly adjustments available"
+  ],
+  "body": [
+    "Women's ready-to-wear is built on standardised sizing that rarely matches a real body. We start from your own measurements instead, so the waist actually sits at your waist.",
+    "Whether it's a boardroom blazer, a tailored trouser suit or an occasion dress, we build in the darts, seams and closures that off-the-rack skips.",
+    "Many clients start with a single blazer and return for a full working wardrobe once they feel the difference."
+  ],
+  "seo": {
+    "title": "Women's Custom Tailoring",
+    "description": "Bespoke blazers, tailored trousers and dresses cut to your own measurements at Lipek Fashion."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "delivery",
+  "order": 4,
+  "name": "Final Fitting & Delivery",
+  "duration": "30 minutes",
+  "summary": "A last on-body check, final pressing, and your garment is boxed or bagged for collection or delivery.",
+  "body": [
+    "Before anything leaves the atelier, you try it on one final time. This is where we check hem length, button stance and overall drape under normal movement — sitting, walking, reaching.",
+    "Any last adjustments are made on the spot where possible, or within 24 hours for anything requiring re-stitching.",
+    "Garments are hand-pressed, packed in a breathable garment bag, and either ready for collection or arranged for local delivery."
+  ],
+  "seo": {
+    "title": "Final Fitting & Delivery — Our Process",
+    "description": "The last step at Lipek Fashion: a final on-body fitting, pressing, and delivery of your finished garment."
+  }
+}

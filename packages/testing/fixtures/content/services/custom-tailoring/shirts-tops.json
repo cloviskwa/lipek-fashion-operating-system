@@ -1,0 +1,26 @@
+{
+  "slug": "shirts-tops",
+  "category": "custom-tailoring",
+  "name": "Shirts & Tops",
+  "shortDescription": "Made-to-measure dress shirts, casual shirts and tailored tops in a collar and cuff style you choose.",
+  "heroImage": "/images/services/custom-tailoring/shirts-tops.jpg",
+  "turnaround": "7–10 business days",
+  "priceFrom": 55,
+  "currency": "USD",
+  "fabricNotes": "Egyptian and Supima cotton poplin, oxford cloth, linen and linen-cotton blends.",
+  "highlights": [
+    "Collar, cuff and placket styles built to order",
+    "Sleeve length and body cut fitted to your torso",
+    "Monogramming available on cuff or placket",
+    "Reorder from your saved pattern in one visit"
+  ],
+  "body": [
+    "A shirt is worn closer to the body than almost anything else you own, which is exactly why fit matters so much here. We cut the collar, cuff, yoke and body separately to your frame instead of scaling a single block.",
+    "Pick your fabric, collar style and cuff finish, or bring reference photos of a fit you already love and we'll rebuild the pattern around it.",
+    "Once your first shirt is fitted, your pattern is saved — reorders in new fabric ship without a second fitting."
+  ],
+  "seo": {
+    "title": "Custom Shirts & Tops",
+    "description": "Made-to-measure dress shirts and tailored tops in your choice of collar, cuff and fabric at Lipek Fashion."
+  }
+}

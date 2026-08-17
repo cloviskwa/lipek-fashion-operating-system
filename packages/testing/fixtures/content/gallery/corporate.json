@@ -1,0 +1,16 @@
+{
+  "slug": "corporate",
+  "name": "Corporate",
+  "summary": "Boardroom-ready suiting and tailored separates for business and executive clients.",
+  "accentColor": "#3a322a",
+  "itemCount": 12,
+  "items": [
+    { "caption": "Charcoal wool two-piece for a client-facing role" },
+    { "caption": "Women's tailored trouser suit in navy crepe" },
+    { "caption": "Custom shirt and blazer set for daily wear" }
+  ],
+  "seo": {
+    "title": "Corporate Gallery",
+    "description": "Boardroom suiting and tailored business wear made by Lipek Fashion."
+  }
+}
