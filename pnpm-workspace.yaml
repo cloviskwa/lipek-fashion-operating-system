@@ -4,5 +4,17 @@ packages:
   - 'packages/*'
 
 allowBuilds:
+  # All below are mainstream, well-known packages whose native/postinstall
+  # build step is required for the official Vendure server (@vendure/core's
+  # deps: @apollo/protobufjs, bcrypt) and the official Next.js storefront
+  # starter's own toolchain (esbuild via Vite, @swc/core via Next.js,
+  # @parcel/watcher, msw for tests) to function — approved during FOUND-014
+  # bootstrap, not blanket-trusted for future arbitrary packages.
+  '@apollo/protobufjs': true
+  '@parcel/watcher': true
+  '@swc/core': true
+  bcrypt: true
+  esbuild: true
+  msw: true
   sharp: true
   unrs-resolver: true
