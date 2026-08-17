@@ -5,7 +5,7 @@
 
 ## Context
 
-This engagement requires MFA built to "most advanced current practice." Vendure Core does not ship first-party MFA (to be re-verified against current Vendure docs at implementation time per `AGENTS.md`). No sibling `/dev` project audited for this engagement (`docs/implementation/SIBLING_PROJECT_SECURITY_FINDINGS.md`) has a working, reusable MFA implementation — the closest is a well-designed but disconnected MFA *gate* pattern in the `digital2moro-platform` family (env-driven enforcement modes, redirect-not-403 on missing factor, privileged-account-requires-stronger-factor), with no working enrollment flow behind it.
+This engagement requires MFA built to "most advanced current practice." Vendure Core does not ship first-party MFA (to be re-verified against current Vendure docs at implementation time per `AGENTS.md`). No sibling `/dev` project audited for this engagement (`docs/implementation/SIBLING_PROJECT_SECURITY_FINDINGS.md`) has a working, reusable MFA implementation — the closest is a well-designed but disconnected MFA _gate_ pattern in the `digital2moro-platform` family (env-driven enforcement modes, redirect-not-403 on missing factor, privileged-account-requires-stronger-factor), with no working enrollment flow behind it.
 
 ## Decision
 

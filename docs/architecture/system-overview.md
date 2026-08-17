@@ -45,10 +45,10 @@ Not yet built: everything above except this document. `apps/server` and `apps/st
 
 ## Ports/services (filled in once `FOUND-014`/`FOUND-018` land)
 
-| Service | Local port | Notes |
-|---|---|---|
-| `apps/server` (Vendure Shop/Admin API) | TBD | Set at bootstrap |
-| `apps/server` (Vendure Dashboard) | TBD | Set at bootstrap |
-| `apps/storefront` | TBD | Set at bootstrap |
-| PostgreSQL | TBD | Docker Compose, `infra/compose` |
-| Redis | TBD | Docker Compose, introduced ahead of schedule if Phase 1 load requires it, else Phase 11 |
+| Service                                | Local port | Notes                                                                                   |
+| -------------------------------------- | ---------- | --------------------------------------------------------------------------------------- |
+| `apps/server` (Vendure Shop/Admin API) | TBD        | Set at bootstrap                                                                        |
+| `apps/server` (Vendure Dashboard)      | TBD        | Set at bootstrap                                                                        |
+| `apps/storefront`                      | TBD        | Set at bootstrap                                                                        |
+| PostgreSQL                             | TBD        | Docker Compose, `infra/compose`                                                         |
+| Redis                                  | TBD        | Docker Compose, introduced ahead of schedule if Phase 1 load requires it, else Phase 11 |

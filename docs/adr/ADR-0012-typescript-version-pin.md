@@ -1,6 +1,6 @@
 # ADR-0012: TypeScript Version Pin for Phase 1
 
-**Status:** Accepted
+**Status:** Accepted (amended 2026-08-17, same day, during FOUND-014 execution — see Amendment below)
 **Date:** 2026-08-17
 
 ## Context
@@ -8,21 +8,42 @@
 During the pre-Phase-1 architecture normalization pass, reverifying package versions against the npm registry (not assumed from Phase 0 memory, per `AGENTS.md`'s "verify unstable technical details" rule) found that the `typescript` package's `latest` dist-tag is now **7.0.2** — TypeScript 7, a from-scratch native (Go) compiler that reached general availability on 2026-07-08, roughly six weeks before this pass.
 
 TypeScript 7.0 is not a routine minor bump:
+
 - It ships with **no stable programmatic compiler API** — Microsoft has stated that lands in 7.1, "several months away."
 - `typescript-eslint` filed and closed a TypeScript-7-support request as **"not planned"** on GA day, specifically because of the missing API.
 - Tooling built on the old `ts.*` API surface (e.g. `ts-morph`) is reported completely broken against the native compiler.
 - The only documented interim workaround — running 7.0 for `tsc` while pinning a separate TypeScript 6.0 compatibility package just for ESLint — is not something Phase 1's CI baseline (`FOUND-023`) should be built on.
 
-Source of truth §0.4/§0.2 requires re-verifying versions against current documentation before installation and explicitly warns against blindly pinning versions from planning documents months later. This ADR is that verification landing on a *deliberate non-default* choice, not an oversight.
+Source of truth §0.4/§0.2 requires re-verifying versions against current documentation before installation and explicitly warns against blindly pinning versions from planning documents months later. This ADR is that verification landing on a _deliberate non-default_ choice, not an oversight.
 
-## Decision
+## Original decision (2026-08-17, pre-Phase-1 normalization pass)
 
-Pin TypeScript to the **latest 5.9.x line** across the monorepo (`packages/config`'s shared TS config, and every app's `devDependencies`) for all of Phase 1. Do not run `pnpm add -D typescript@latest` anywhere in this repository until this ADR is revisited. The root `package.json`'s existing `"typescript": "^5.9.3"` pin is already safe (a caret range does not cross a major version boundary into 7.x) and requires no change.
+Pin TypeScript to the latest 5.9.x line across the monorepo for all of Phase 1, and do not adopt `latest` anywhere until this ADR is revisited.
 
-Revisit this ADR once **all** of the following are true: `typescript-eslint` ships confirmed TypeScript 7.1+ support, Next.js's and NestJS/Vendure's own toolchains confirm compatibility, and GraphQL codegen tooling (needed for `packages/graphql`) is verified compatible. Until then, TypeScript 7 adoption is explicitly out of scope, not merely deferred by inertia.
+## Amendment (2026-08-17, during `FOUND-014` execution)
+
+Executing `FOUND-014` surfaced an actual compatibility blocker with the original decision, exactly the condition under which this ADR said it should be revisited. The **official Next.js storefront starter** (`vendurehq/nextjs-starter-vendure`, the SOT-locked storefront foundation) pins `"typescript": "^6.0.3"` in its own `package.json` — not 5.9.x, and not 7.x.
+
+Checked before amending:
+
+- TypeScript 6.0 is Microsoft's own **"final JavaScript-based release"** — a deliberate bridge release ahead of 7.0, but still the classic compiler with the classic `ts.*` programmatic API. It does not have the specific problems this ADR was written to avoid (no native-compiler API gap, no missing `typescript-eslint` support).
+- The starter's own `package-lock.json` already resolves `typescript-eslint@8.65.0`, with a peer range covering `^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0` — i.e. the ecosystem has already moved further than the "not planned" finding above suggested (that finding reflected the state on/near TS 7.0's GA day, not the state as of this amendment).
+- `@vendure/core@3.7.2` itself pins TypeScript `5.8.2` as its own **devDependency** — but since Vendure is consumed as a published package, that pin governs Vendure's own build only and does not constrain what TypeScript version `apps/server` uses to build LIPEK's own code against it.
+
+**The real, narrower concern this ADR should have stated from the start: avoid the TypeScript 7.x native compiler (no stable API, broken tooling), not "stay on exactly 5.9.x."** Forcing the official storefront starter down to 5.9.x would mean hand-editing a generated scaffold's own devDependency against what its own bundled tooling (`eslint-config-next`, `next typegen`) was built and tested against — precisely the kind of unnecessary rewrite `FOUND-015`'s own stop condition warns against, for a version line (6.0) that doesn't actually carry the risk this ADR exists to avoid.
+
+## Decision (current)
+
+- **Platform-wide:** do not adopt the TypeScript **7.x native compiler** anywhere in this repository until `typescript-eslint`, Next.js, and NestJS/Vendure's own toolchains all confirm compatibility (unchanged from the original decision's revisit condition).
+- **Per-app:** each app keeps whatever TypeScript version its own official upstream scaffold specifies, as generated:
+  - `apps/server`: TypeScript `5.8.2` (exact, as generated by `@vendure/create`).
+  - `apps/storefront`: TypeScript `^6.0.3` (as generated by the official Next.js starter).
+  - Neither is forced into alignment with the other or with a single monorepo-wide pin. `FOUND-015` normalizes shared **conventions** (strict mode — already `true` in both, as generated; ESLint/Prettier scope; workspace scripts) across apps, not a single enforced compiler binary version, consistent with "prefer minimal normalization over replacing official Vendure/Next.js conventions."
+- Do not run `pnpm add -D typescript@latest` (or otherwise introduce 7.x) anywhere in this repository until the revisit condition above is met.
 
 ## Consequences
 
-- `FOUND-015` (workspace/toolchain normalization) and `FOUND-023` (CI baseline) proceed against TypeScript 5.9.x without ambiguity.
-- `docs/implementation/dependency-register.md` records this pin and the reasoning so a future session doesn't "helpfully" upgrade to `latest`.
+- `FOUND-014` proceeds using each app's own generated TypeScript pin without forcing a rewrite; both apps' `pnpm typecheck` pass cleanly as generated.
+- `FOUND-015` and `FOUND-023` (CI baseline) treat "no TypeScript 7.x" as the enforced platform rule, not "every app must be on 5.9.x."
+- `docs/implementation/dependency-register.md` records both apps' actual pinned versions and this ADR's amended reasoning.
 - A stale/out-of-date read of this ADR is itself a risk — if significant time has passed since 2026-08-17, re-run the same registry/ecosystem check before trusting this conclusion, per this ADR's own reasoning.

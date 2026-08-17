@@ -17,12 +17,12 @@
 
 ## What gets ported from `_reference/legacy-prototype/` (task `FOUND-020`)
 
-| From | To | How |
-|---|---|---|
-| `styles/variables.css` | `packages/ui/src/tokens` | Extended with dark/light pairs (`THEME-001`), not copied verbatim |
-| `components/ui/primitives/*` | `packages/ui/src/primitives` | Already copied; review against Vendure starter's component conventions before wiring in |
-| Route/IA structure (`app/*`) | `apps/storefront/app/*` | Re-implemented against backend APIs, not copied as static-JSON-reading code |
-| `lib/seo/metadata.ts`, `lib/schema/builders.ts` | `apps/storefront/lib/seo`, `lib/schema` | Pattern reused, data source becomes `CONTENT-006`/catalog APIs |
-| `content/*.json` | `packages/testing/fixtures/content` | Already copied — seed/test fixtures only, never a runtime dependency |
+| From                                            | To                                      | How                                                                                     |
+| ----------------------------------------------- | --------------------------------------- | --------------------------------------------------------------------------------------- |
+| `styles/variables.css`                          | `packages/ui/src/tokens`                | Extended with dark/light pairs (`THEME-001`), not copied verbatim                       |
+| `components/ui/primitives/*`                    | `packages/ui/src/primitives`            | Already copied; review against Vendure starter's component conventions before wiring in |
+| Route/IA structure (`app/*`)                    | `apps/storefront/app/*`                 | Re-implemented against backend APIs, not copied as static-JSON-reading code             |
+| `lib/seo/metadata.ts`, `lib/schema/builders.ts` | `apps/storefront/lib/seo`, `lib/schema` | Pattern reused, data source becomes `CONTENT-006`/catalog APIs                          |
+| `content/*.json`                                | `packages/testing/fixtures/content`     | Already copied — seed/test fixtures only, never a runtime dependency                    |
 
 Nothing in this table is done yet; this is the porting plan `FOUND-020` executes against.

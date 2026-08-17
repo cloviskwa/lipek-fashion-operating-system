@@ -1,25 +1,25 @@
 # Architecture Decision Record Backlog
 
-**Status:** Authoritative (backlog) — **all 12 original items resolved as of 2026-08-17**; see `docs/adr/ADR-0001` through `ADR-0012` for the accepted decisions and rationale. A 13th ADR (`ADR-0013`, Dashboard extension colocation) was added during the pre-Phase-1 architecture normalization pass — it is an architecture correction discovered by re-verifying the official Vendure Dashboard extension model, not a pre-existing backlog item, so it is not listed in this file's resolution table; see `docs/adr/ADR-0013-dashboard-extension-colocation.md` directly. This document is retained as the historical record of *why* each decision was open and what was considered; it is no longer the place to look for current status — the individual ADR files are.
+**Status:** Authoritative (backlog) — **all 12 original items resolved as of 2026-08-17**; see `docs/adr/ADR-0001` through `ADR-0012` for the accepted decisions and rationale. A 13th ADR (`ADR-0013`, Dashboard extension colocation) was added during the pre-Phase-1 architecture normalization pass — it is an architecture correction discovered by re-verifying the official Vendure Dashboard extension model, not a pre-existing backlog item, so it is not listed in this file's resolution table; see `docs/adr/ADR-0013-dashboard-extension-colocation.md` directly. This document is retained as the historical record of _why_ each decision was open and what was considered; it is no longer the place to look for current status — the individual ADR files are.
 **Purpose:** Track every open technical decision the source of truth deliberately leaves unresolved (SOT §0.3 "PLANNED/PROVISIONAL/UNDECIDED"), plus decisions introduced by this engagement's additional requirements (MFA, social login, mobile apps, theming). Do not invent decisions that aren't genuinely open.
 
 ## Resolution Summary (2026-08-17)
 
-| ADR | Resolution | Nature of resolution |
-|---|---|---|
-| [ADR-0001](../adr/ADR-0001-payment-provider.md) | Stripe, provisional | Accepted-provisional — reconfirm before production |
-| [ADR-0002](../adr/ADR-0002-email-sms-provider.md) | Transactional-email specialist now, SMS deferred to Phase 7 with regional-coverage check | Accepted-provisional |
-| [ADR-0003](../adr/ADR-0003-object-storage-provider.md) | Cloudflare R2 / Backblaze B2, provisional | Accepted-provisional — reconfirm before production |
-| [ADR-0004](../adr/ADR-0004-opensearch-hosting.md) | No decision made — correctly deferred to Phase 8 gate | Deferred by design |
-| [ADR-0005](../adr/ADR-0005-llm-model-provider.md) | Anthropic Claude for Phase 9 pilot, provider-agnostic config | Accepted-provisional — reconfirm before Phase 10 |
-| [ADR-0006](../adr/ADR-0006-mfa-implementation-approach.md) | WebAuthn primary + TOTP fallback + backup codes, self-hosted `lipek-security` plugin | **Accepted (final)** |
-| [ADR-0007](../adr/ADR-0007-mobile-app-strategy.md) | Hybrid: Capacitor customer app, native delivery app, responsive Dashboard for staff | **Accepted (final)** |
-| [ADR-0008](../adr/ADR-0008-social-login-integration-pattern.md) | Server-authoritative `ExternalAuthenticationStrategy` | **Accepted (final)** |
-| [ADR-0009](../adr/ADR-0009-hosting-provider.md) | No vendor selected — Docker Compose parity mandated now, vendor chosen in Phase 11 | Deferred by design |
-| [ADR-0010](../adr/ADR-0010-aeo-strategy.md) | `llms.txt` + structured Q&A, sequenced after SEO stabilizes (Phase 9) | **Accepted (final)** |
-| [ADR-0011](../adr/ADR-0011-theming-token-ownership.md) | Single token source in `packages/ui`, per-renderer bridges | **Accepted (final)** |
-| [ADR-0012](../adr/ADR-0012-typescript-version-pin.md) | Pin TypeScript to the 5.9.x line; explicitly do not adopt 7.x (native compiler, no stable API/typescript-eslint support yet) | **Accepted (final)** — added during the pre-Phase-1 architecture normalization pass, 2026-08-17 |
-| [ADR-0013](../adr/ADR-0013-dashboard-extension-colocation.md) *(not an original backlog item — see note above)* | Remove `apps/staff-console-extensions`; colocate each plugin's Dashboard extension at `apps/server/src/plugins/<name>/dashboard/` | **Accepted (final)** — added during the pre-Phase-1 architecture normalization pass, 2026-08-17 |
+| ADR                                                                                                             | Resolution                                                                                                                                                                                     | Nature of resolution                                                                                                                                      |
+| --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ADR-0001](../adr/ADR-0001-payment-provider.md)                                                                 | Stripe, provisional                                                                                                                                                                            | Accepted-provisional — reconfirm before production                                                                                                        |
+| [ADR-0002](../adr/ADR-0002-email-sms-provider.md)                                                               | Transactional-email specialist now, SMS deferred to Phase 7 with regional-coverage check                                                                                                       | Accepted-provisional                                                                                                                                      |
+| [ADR-0003](../adr/ADR-0003-object-storage-provider.md)                                                          | Cloudflare R2 / Backblaze B2, provisional                                                                                                                                                      | Accepted-provisional — reconfirm before production                                                                                                        |
+| [ADR-0004](../adr/ADR-0004-opensearch-hosting.md)                                                               | No decision made — correctly deferred to Phase 8 gate                                                                                                                                          | Deferred by design                                                                                                                                        |
+| [ADR-0005](../adr/ADR-0005-llm-model-provider.md)                                                               | Anthropic Claude for Phase 9 pilot, provider-agnostic config                                                                                                                                   | Accepted-provisional — reconfirm before Phase 10                                                                                                          |
+| [ADR-0006](../adr/ADR-0006-mfa-implementation-approach.md)                                                      | WebAuthn primary + TOTP fallback + backup codes, self-hosted `lipek-security` plugin                                                                                                           | **Accepted (final)**                                                                                                                                      |
+| [ADR-0007](../adr/ADR-0007-mobile-app-strategy.md)                                                              | Hybrid: Capacitor customer app, native delivery app, responsive Dashboard for staff                                                                                                            | **Accepted (final)**                                                                                                                                      |
+| [ADR-0008](../adr/ADR-0008-social-login-integration-pattern.md)                                                 | Server-authoritative `ExternalAuthenticationStrategy`                                                                                                                                          | **Accepted (final)**                                                                                                                                      |
+| [ADR-0009](../adr/ADR-0009-hosting-provider.md)                                                                 | No vendor selected — Docker Compose parity mandated now, vendor chosen in Phase 11                                                                                                             | Deferred by design                                                                                                                                        |
+| [ADR-0010](../adr/ADR-0010-aeo-strategy.md)                                                                     | `llms.txt` + structured Q&A, sequenced after SEO stabilizes (Phase 9)                                                                                                                          | **Accepted (final)**                                                                                                                                      |
+| [ADR-0011](../adr/ADR-0011-theming-token-ownership.md)                                                          | Single token source in `packages/ui`, per-renderer bridges                                                                                                                                     | **Accepted (final)**                                                                                                                                      |
+| [ADR-0012](../adr/ADR-0012-typescript-version-pin.md)                                                           | Platform-wide: avoid TS 7.x (native compiler). Per-app: `apps/server` stays on 5.8.2, `apps/storefront` stays on ^6.0.3 — each app's own official scaffold pin, not forced to a single version | **Accepted (final), amended during `FOUND-014`** — the original blanket 5.9.x pin conflicted with the official Next.js starter's own `^6.0.3` requirement |
+| [ADR-0013](../adr/ADR-0013-dashboard-extension-colocation.md) _(not an original backlog item — see note above)_ | Remove `apps/staff-console-extensions`; colocate each plugin's Dashboard extension at `apps/server/src/plugins/<name>/dashboard/`                                                              | **Accepted (final)** — added during the pre-Phase-1 architecture normalization pass, 2026-08-17                                                           |
 
 Nothing in this plan is blocked by an unresolved MUST-DECIDE-BEFORE-IMPLEMENTATION item. The four items marked "provisional" and the two marked "deferred by design" are explicitly not blocking — see each ADR's Consequences section for exactly what they gate (all are production-readiness gates, not implementation-start gates).
 
@@ -49,7 +49,7 @@ Classifications: `MUST DECIDE BEFORE IMPLEMENTATION` · `MUST DECIDE BEFORE PROD
 
 - **Classification:** MUST DECIDE BEFORE PRODUCTION (local dev unblocked by Vendure `AssetServerPlugin`).
 - **Why open:** SOT §0.3 "PLANNED — provider selected during infrastructure ADR."
-- **Options:** AWS S3, Cloudflare R2, Backblaze B2, MinIO self-hosted (also a viable *local dev* emulator regardless of production choice).
+- **Options:** AWS S3, Cloudflare R2, Backblaze B2, MinIO self-hosted (also a viable _local dev_ emulator regardless of production choice).
 - **Recommendation:** Prefer a provider with no/low egress fees if the storefront serves large product-image volumes globally (Cloudflare R2 or Backblaze B2 are common choices here); confirm against final hosting ADR-0009 for network locality.
 - **Blocks:** `FOUND-021` (asset pipeline), `OPS-003` (document/receipt storage).
 
@@ -119,25 +119,25 @@ Classifications: `MUST DECIDE BEFORE IMPLEMENTATION` · `MUST DECIDE BEFORE PROD
 
 - **Classification:** CAN DEFER to Phase 2/3 (does not block Phase 0/1 foundation work).
 - **Why open:** This engagement's explicit dark/light theme requirement. Needs a decision on whether `packages/ui` owns a single token set consumed everywhere (web + Dashboard extensions + mobile) or whether the Vendure Dashboard's own theming system (which may have its own conventions) is layered separately from the storefront/mobile token set.
-- **Recommendation:** Single source of token *values* in `packages/ui`, with a thin per-renderer bridge (CSS custom properties for web, Dashboard's extension theming hooks, native theming APIs for mobile) rather than three independent token sets.
+- **Recommendation:** Single source of token _values_ in `packages/ui`, with a thin per-renderer bridge (CSS custom properties for web, Dashboard's extension theming hooks, native theming APIs for mobile) rather than three independent token sets.
 - **Blocks:** `THEME-001` onward.
 
 ---
 
 ## Backlog Summary Table
 
-| ADR | Decision | Classification | Blocks |
-|---|---|---|---|
-| ADR-0001 | Payment provider | MUST DECIDE BEFORE PRODUCTION | `COM-015`–`COM-018` |
-| ADR-0002 | Email/SMS provider | MUST DECIDE BEFORE PRODUCTION | `COM-019`, `SEC-004`, `CRM-010` |
-| ADR-0003 | Object storage provider | MUST DECIDE BEFORE PRODUCTION | `FOUND-021`, `OPS-003` |
-| ADR-0004 | OpenSearch hosting | CAN DEFER | `SEARCH-005`+ |
-| ADR-0005 | LLM model provider(s) | MUST DECIDE BEFORE PRODUCTION AI ROLLOUT | `AI-014` |
-| ADR-0006 | MFA implementation approach | MUST DECIDE BEFORE IMPLEMENTATION | `SEC-001`–`SEC-006`, `COM-010`, `ADMIN-001` |
-| ADR-0007 | Mobile/native app strategy | MUST DECIDE BEFORE IMPLEMENTATION (Phase 3 mobile tasks) | `MOBILE-001`+ |
-| ADR-0008 | Social login integration pattern | MUST DECIDE BEFORE IMPLEMENTATION | `SEC-007`, `SEC-008` |
-| ADR-0009 | Hosting/cloud provider | MUST DECIDE BEFORE PRODUCTION | `FOUND-018`, `OPS-014` |
-| ADR-0010 | AEO strategy | CAN DEFER | `SEO-006` |
-| ADR-0011 | Theming token ownership | CAN DEFER | `THEME-001`+ |
+| ADR      | Decision                         | Classification                                           | Blocks                                      |
+| -------- | -------------------------------- | -------------------------------------------------------- | ------------------------------------------- |
+| ADR-0001 | Payment provider                 | MUST DECIDE BEFORE PRODUCTION                            | `COM-015`–`COM-018`                         |
+| ADR-0002 | Email/SMS provider               | MUST DECIDE BEFORE PRODUCTION                            | `COM-019`, `SEC-004`, `CRM-010`             |
+| ADR-0003 | Object storage provider          | MUST DECIDE BEFORE PRODUCTION                            | `FOUND-021`, `OPS-003`                      |
+| ADR-0004 | OpenSearch hosting               | CAN DEFER                                                | `SEARCH-005`+                               |
+| ADR-0005 | LLM model provider(s)            | MUST DECIDE BEFORE PRODUCTION AI ROLLOUT                 | `AI-014`                                    |
+| ADR-0006 | MFA implementation approach      | MUST DECIDE BEFORE IMPLEMENTATION                        | `SEC-001`–`SEC-006`, `COM-010`, `ADMIN-001` |
+| ADR-0007 | Mobile/native app strategy       | MUST DECIDE BEFORE IMPLEMENTATION (Phase 3 mobile tasks) | `MOBILE-001`+                               |
+| ADR-0008 | Social login integration pattern | MUST DECIDE BEFORE IMPLEMENTATION                        | `SEC-007`, `SEC-008`                        |
+| ADR-0009 | Hosting/cloud provider           | MUST DECIDE BEFORE PRODUCTION                            | `FOUND-018`, `OPS-014`                      |
+| ADR-0010 | AEO strategy                     | CAN DEFER                                                | `SEO-006`                                   |
+| ADR-0011 | Theming token ownership          | CAN DEFER                                                | `THEME-001`+                                |
 
 No ADR in this backlog was invented without a corresponding open item in the SOT or an explicit requirement from this engagement's brief.

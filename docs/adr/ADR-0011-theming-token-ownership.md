@@ -5,7 +5,7 @@
 
 ## Context
 
-This engagement requires dark/light theming across the storefront, the Vendure Dashboard extensions, and the mobile apps. A decision is needed on whether token *values* are owned once or duplicated per renderer.
+This engagement requires dark/light theming across the storefront, the Vendure Dashboard extensions, and the mobile apps. A decision is needed on whether token _values_ are owned once or duplicated per renderer.
 
 ## Decision
 

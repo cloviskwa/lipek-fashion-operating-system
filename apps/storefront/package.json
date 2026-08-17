@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-starter-vendure",
+  "name": "@lipek/storefront",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "check-types": "next typegen && tsc --noEmit",
+    "typecheck": "npm run check-types",
     "test": "node --test \"tests/**/*.test.mjs\"",
     "upgrade:init": "node scripts/storefront-upgrade.mjs init",
     "upgrade:prepare": "node scripts/storefront-upgrade.mjs prepare",

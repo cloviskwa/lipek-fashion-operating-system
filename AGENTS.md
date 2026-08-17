@@ -48,6 +48,7 @@ Code may never silently redefine the product. If reality requires a change to th
 ## Do-Not list (source of truth §52E)
 
 Do not:
+
 - hard-code catalog categories in navigation components
 - hard-code product tags/filter lists
 - hard-code homepage promotions that staff should edit

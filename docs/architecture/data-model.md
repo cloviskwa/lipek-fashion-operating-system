@@ -5,19 +5,19 @@
 
 ## Vendure-native catalog mapping (binding — do not create a parallel system)
 
-| LIPEK concept | Vendure implementation |
-|---|---|
-| Product | `Product` |
-| Purchasable SKU | `ProductVariant` |
+| LIPEK concept                          | Vendure implementation                            |
+| -------------------------------------- | ------------------------------------------------- |
+| Product                                | `Product`                                         |
+| Purchasable SKU                        | `ProductVariant`                                  |
 | Size/Color when creating separate SKUs | `ProductOptionGroup` + `ProductOption` + variants |
-| Category hierarchy | Nested `Collection` tree |
-| Tags/structured attributes/filters | `Facet` + `FacetValue` |
-| Product media | `Asset` |
-| Stock | `StockLevel` / `StockLocation` |
-| Region/storefront | `Channel` |
-| Customer group | `CustomerGroup` |
-| Promotions | Vendure Promotions |
-| Internal/product-specific extra fields | Vendure custom fields |
+| Category hierarchy                     | Nested `Collection` tree                          |
+| Tags/structured attributes/filters     | `Facet` + `FacetValue`                            |
+| Product media                          | `Asset`                                           |
+| Stock                                  | `StockLevel` / `StockLocation`                    |
+| Region/storefront                      | `Channel`                                         |
+| Customer group                         | `CustomerGroup`                                   |
+| Promotions                             | Vendure Promotions                                |
+| Internal/product-specific extra fields | Vendure custom fields                             |
 
 ## Custom entity stubs, by plugin (populated with real schemas/migrations as each phase builds)
 

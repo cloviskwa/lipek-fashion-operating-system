@@ -8,11 +8,13 @@
     "node": "24.x"
   },
   "scripts": {
-    "lint": "pnpm -r lint",
-    "typecheck": "pnpm -r typecheck",
-    "test": "pnpm -r test",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev:server": "pnpm --filter @lipek/server dev",
+    "dev:storefront": "pnpm --filter @lipek/storefront dev"
   },
   "devDependencies": {
     "prettier": "^3.9.4",

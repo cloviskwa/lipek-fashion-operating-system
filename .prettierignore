@@ -1,0 +1,23 @@
+# Generated / vendored content that root-level formatting must not touch.
+#
+# apps/server and apps/storefront are official scaffolds (Vendure /
+# Next.js). Their own formatting conventions are managed by their own
+# tooling (apps/storefront already ships its own eslint.config.mjs);
+# forcing our root .prettierrc over generated framework code (including
+# non-JS/TS assets like Vendure's MJML/Handlebars email templates, which
+# Prettier's HTML parser cannot even parse) would be exactly the kind of
+# unnecessary rewrite FOUND-015 explicitly avoids. See ADR-0013 and
+# MASTER_IMPLEMENTATION_PLAN.md Phase 1B (FOUND-015 stop condition).
+apps/
+
+# The prior static-prototype repository, kept for reference only during
+# FOUND-020 porting -- not something we maintain or reformat.
+_reference/
+
+# Generated lockfile -- never hand-formatted or Prettier-checked.
+pnpm-lock.yaml
+
+# The source of truth is an externally-governed authoritative document
+# (SOT precedence rule, AGENTS.md / docs/internal note) -- we don't
+# reformat its whitespace/line-wrapping as part of our own tooling.
+docs/internal/

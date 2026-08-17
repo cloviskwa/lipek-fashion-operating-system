@@ -33,7 +33,7 @@ apps/server/src/plugins/documents/dashboard/
 
 The aggregate Dashboard build lives at the `apps/server` root: `apps/server/vite.config.mts` (configuring `vendureDashboardPlugin` against `vendure-config.ts`) and `apps/server/tsconfig.dashboard.json` (including `src/plugins/**/dashboard/*`). Genuinely cross-plugin shell concerns (global branding, the dark/light theme bridge entry point) live alongside this build config, not in a plugin and not in a separate app.
 
-If a genuine need for shared Dashboard *components* (not shell config) emerges across multiple plugins' extensions, those may live in a shared package (e.g. an addition to `packages/ui` or a new `packages/dashboard-ui`) — deferred until a real duplication problem appears, not created speculatively now.
+If a genuine need for shared Dashboard _components_ (not shell config) emerges across multiple plugins' extensions, those may live in a shared package (e.g. an addition to `packages/ui` or a new `packages/dashboard-ui`) — deferred until a real duplication problem appears, not created speculatively now.
 
 ## Consequences
 
