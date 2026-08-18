@@ -23,6 +23,17 @@ services:
             POSTGRES_PASSWORD: h42vJ-hKoxuoNDkbUu5Ttg
         labels:
             - "io.vendure.create.name=lipek-scaffold"
+        # Infra-level DB readiness check (FOUND-018) -- deliberately not
+        # duplicated as app-level logic in apps/server, since Vendure's own
+        # built-in health-check feature is marked deprecated as of this
+        # bootstrap ("Application-level health checks are an anti-pattern
+        # -- health monitoring should be handled by your infrastructure").
+        # See docs/implementation/deployment-topology.md.
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U vendure -d vendure"]
+            interval: 5s
+            timeout: 5s
+            retries: 10
 
     mysql_db:
         image: mysql:8
