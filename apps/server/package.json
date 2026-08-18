@@ -26,6 +26,7 @@
     "pg": "8.23.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@vendure/cli": "3.7.2",
     "ts-node": "10.9.2",
     "typescript": "5.8.2",

@@ -39,6 +39,9 @@ importers:
         specifier: 8.23.0
         version: 8.23.0
     devDependencies:
+      '@types/express':
+        specifier: ^5.0.6
+        version: 5.0.6
       '@vendure/cli':
         specifier: 3.7.2
         version: 3.7.2(@swc/core@1.16.0(@swc/helpers@0.5.23))(@types/node@26.2.0)(jiti@2.7.0)(lightningcss@1.32.0)(yaml@2.9.0)
