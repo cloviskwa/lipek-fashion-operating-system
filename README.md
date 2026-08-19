@@ -41,7 +41,6 @@ docs/
   architecture/ domains/ api/ implementation/ operations/ testing/ adr/
 infra/                       Docker Compose, deployment manifests
 scripts/                     Repo-level automation
-_reference/legacy-prototype/ The prior static Next.js prototype, kept for reference during FOUND-020 porting only — not a live app
 ```
 
 ## Locked technology decisions
