@@ -21,3 +21,10 @@ pnpm-lock.yaml
 # (SOT precedence rule, AGENTS.md / docs/internal note) -- we don't
 # reformat its whitespace/line-wrapping as part of our own tooling.
 docs/internal/
+
+# The external build brief carries a generated 451-row SHA-256 manifest table
+# and a generated directory tree, both injected by
+# scripts/generate-manifest.mjs --inject. Prettier's table alignment would
+# rewrite every generated row on each regeneration, so the document formats
+# itself through the generator instead.
+docs/implementation/ROCKET_NEW_BUILD_BRIEF.md
