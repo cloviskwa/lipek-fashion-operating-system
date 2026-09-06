@@ -5,6 +5,8 @@
 
 `apps/storefront` is a **renderer of backend-owned data**, never a system of record (source of truth §3.1). It is bootstrapped in `FOUND-014` from the official Vendure Next.js starter (Next.js 16 / React 19, verified — see `system-overview.md`), not evolved from `_reference/legacy-prototype/`.
 
+**Frontend design language:** the storefront's custom visual/interaction design — page composition, motion language, component strategy, and the F1–F7 homepage/page redesign sequence — is governed by [`storefront-design-experience-spec.md`](storefront-design-experience-spec.md) (Derived, per SOT §5B: frontend-owned design, backend-fed content).
+
 ## Session/API rules (source of truth §6A)
 
 - Consume Vendure's **Shop GraphQL API** for commerce/customer operations.

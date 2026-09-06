@@ -13,7 +13,7 @@ AI CODING AGENTS: READ THE ENTIRE FILE BEFORE IMPLEMENTATION.
 **Primary Stack:** Next.js 16/App Router, React, TypeScript, Vendure Core 3.x, NestJS, Vendure React Dashboard, PostgreSQL, GraphQL, Mastra, Redis/BullMQ, pgvector, PWA and modular/event-driven architecture  
 **Package Manager:** pnpm  
 **Runtime Baseline:** Node.js 24 LTS (Vendure supports Node 20/22/24; use the exact supported version recorded in the repository toolchain files)  
-**Last Technical Review:** 17 August 2026
+**Last Technical Review:** 5 September 2026
 
 ---
 
@@ -913,6 +913,15 @@ Homepage
 The code defines **section component types and rendering rules**. Staff choose content, order, references, visibility and scheduling from the Dashboard.
 
 This keeps design quality controlled while empowering the client to operate content without code.
+
+## 5B. Storefront Design Is Custom Frontend-Owned, Backend-Fed
+
+The storefront's visual and interaction design must be **custom-made by the frontend** — it must never render as a generic commerce template. Backend-driven composition (§5A) governs *content and references*; it does not govern *design*. The division of ownership is:
+
+- **Frontend owns (design):** visual composition, section component design and rendering rules, art direction, typography treatment, spacing rhythm, grid geometry, image ratios, animation/motion choreography, hover and interaction behavior, product-card and editorial-card treatment, responsive behavior, and design-specific microcopy and structural labels.
+- **Backend owns (content, where necessary):** products, prices, inventory, collections, categories, facets, promotions, campaigns, operational content, editorial records, and every piece of business data staff must be able to edit from the Dashboard without a code change.
+
+The authoritative frontend design & experience specification is `docs/architecture/storefront-design-experience-spec.md` (Derived, subordinate to this document). It defines the homepage section grammar (§9), per-page visual character (§55), motion language (§6), component architecture (§52), and the F1–F7 implementation sequence (§56). All storefront UI work must follow it; where it appears to conflict with this SOT, the SOT wins and the spec is corrected. New UI libraries proposed by the spec (e.g. Framer Motion, Aceternity UI) are installed only with a recorded purpose in `docs/implementation/dependency-register.md` (§0.2).
 
 ---
 

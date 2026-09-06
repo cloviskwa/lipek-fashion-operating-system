@@ -6,18 +6,34 @@
     "browseProducts": "Browse Products",
     "popularCollections": "Popular Collections"
   },
+  "Shell": {
+    "tagline": "Premium African Fashion. Crafted for Every Moment.",
+    "stickyNavLabel": "Mobile navigation",
+    "home": "Home",
+    "shop": "Shop",
+    "search": "Search",
+    "wishlist": "Wishlist",
+    "bag": "Bag",
+    "account": "Account"
+  },
   "Footer": {
-    "description": "A modern, headless e-commerce storefront built with Vendure and Next.js. Fast, flexible, and ready for production.",
+    "description": "A modern fashion shop for curated clothing, tailoring, alterations, laundry care, and customer-first service.",
     "categories": "Categories",
     "customer": "Customer",
+    "shop": "Shop",
+    "services": "Services",
+    "tailoring": "Custom Tailoring",
+    "alterations": "Alterations",
+    "laundry": "Laundry & Dry Cleaning",
+    "myAccount": "My LIPEK",
     "shopAll": "Shop All",
     "orders": "Orders",
     "account": "Account",
-    "vendure": "Vendure",
-    "github": "GitHub",
-    "documentation": "Documentation",
-    "sourceCode": "Source Code",
-    "copyright": "Vendure Store. All rights reserved.",
+    "profile": "Profile",
+    "wishlist": "Wishlist",
+    "addresses": "Addresses",
+    "legal": "Legal",
+    "copyright": "Lipek Fashion Shop. All rights reserved.",
     "poweredBy": "Powered by"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "HomeSections": {
+    "trustStrip": {
+      "freeShipping": "Free Shipping",
+      "securePayment": "Secure Payment",
+      "easyReturns": "Easy Returns",
+      "customTailoring": "Custom Tailoring",
+      "orderTracking": "Order Tracking",
+      "support": "24/7 Support",
+      "pickupDelivery": "Pickup & Delivery"
+    },
+    "categories": {
+      "eyebrow": "Featured Categories",
+      "title": "Find Your Wardrobe",
+      "shopNow": "Shop now"
+    }
+  }
+}

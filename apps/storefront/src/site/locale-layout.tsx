@@ -8,7 +8,8 @@ import {routing} from "@/platform/i18n/routing";
 import {toOgLocale} from "@/platform/i18n/locale-utils";
 import {getRouteLocale} from "@/platform/i18n/server";
 import {Toaster} from "@/components/ui/sonner";
-import {Navbar} from '@/site/navigation/navbar';
+import {SiteHeader} from '@/site/shell/site-header';
+import {StickyMobileNav} from '@/site/shell/sticky-mobile-nav';
 import {Footer} from "@/site/footer";
 import {ThemeProvider} from "@/site/providers/theme-provider";
 import {SITE_NAME, SITE_URL} from "@/config/metadata";
@@ -93,9 +94,12 @@ export default async function LocaleLayout({children}: {children: React.ReactNod
             >
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <ThemeProvider>
-                        <Navbar />
+                        <SiteHeader />
                         {children}
                         <Footer/>
+                        {/* Spacer so the fixed sticky mobile nav never covers the footer (spec §31). */}
+                        <div aria-hidden className="h-16 md:hidden" />
+                        <StickyMobileNav />
                         <Toaster/>
                     </ThemeProvider>
                 </NextIntlClientProvider>

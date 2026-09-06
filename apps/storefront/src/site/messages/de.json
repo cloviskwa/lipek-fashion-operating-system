@@ -6,18 +6,34 @@
     "browseProducts": "Produkte durchsuchen",
     "popularCollections": "Beliebte Kategorien"
   },
+  "Shell": {
+    "tagline": "Premium afrikanische Mode. Gemacht für jeden Moment.",
+    "stickyNavLabel": "Mobile Navigation",
+    "home": "Start",
+    "shop": "Shop",
+    "search": "Suche",
+    "wishlist": "Merkliste",
+    "bag": "Tasche",
+    "account": "Konto"
+  },
   "Footer": {
-    "description": "Ein moderner, Headless-E-Commerce-Shop, erstellt mit Vendure und Next.js. Schnell, flexibel und produktionsbereit.",
+    "description": "Ein moderner Fashion-Shop für kuratierte Kleidung, Schneiderei, Änderungen, Wäschepflege und kundenorientierten Service.",
     "categories": "Kategorien",
     "customer": "Kunde",
+    "shop": "Shop",
+    "services": "Services",
+    "tailoring": "Maßschneiderei",
+    "alterations": "Änderungsservice",
+    "laundry": "Wäsche- & Reinigungsservice",
+    "myAccount": "Mein LIPEK",
     "shopAll": "Alle Produkte",
     "orders": "Bestellungen",
     "account": "Konto",
-    "vendure": "Vendure",
-    "github": "GitHub",
-    "documentation": "Dokumentation",
-    "sourceCode": "Quellcode",
-    "copyright": "Vendure Store. Alle Rechte vorbehalten.",
+    "profile": "Profil",
+    "wishlist": "Merkliste",
+    "addresses": "Adressen",
+    "legal": "Rechtliches",
+    "copyright": "Lipek Fashion Shop. Alle Rechte vorbehalten.",
     "poweredBy": "Powered by"
   }
 }

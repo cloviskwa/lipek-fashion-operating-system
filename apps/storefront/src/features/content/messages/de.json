@@ -1,0 +1,18 @@
+{
+  "HomeSections": {
+    "trustStrip": {
+      "freeShipping": "Kostenloser Versand",
+      "securePayment": "Sichere Zahlung",
+      "easyReturns": "Einfache Rückgaben",
+      "customTailoring": "Maßschneiderei",
+      "orderTracking": "Sendungsverfolgung",
+      "support": "24/7 Support",
+      "pickupDelivery": "Abholung & Lieferung"
+    },
+    "categories": {
+      "eyebrow": "Ausgewählte Kategorien",
+      "title": "Finde deinen Stil",
+      "shopNow": "Jetzt kaufen"
+    }
+  }
+}
