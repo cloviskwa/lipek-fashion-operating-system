@@ -114,7 +114,7 @@ Effort is order-of-magnitude sizing for one engineer fluent in Vendure plugin au
 | `R-01` | Declare surviving `customFields` | — | 28 | 0.5 d | **DONE** (7 Sep) |
 | `R-02` | `LipekContentPlugin` — remaining content entities | 10 | 102 | 5–8 d | **DONE** (7 Sep) |
 | `R-03` | **Specify service stage vocabularies + timeline serialization (ADR)** | — | — | 1–2 d | **DRAFTED** (7 Sep) — [`ADR-0014`](../adr/ADR-0014-service-workflow-stage-vocabularies.md) proposed; awaiting sign-off on 6 open questions |
-| `R-04` | `LipekSecurityPlugin` — TOTP, WebAuthn, MFA recovery, audit log, API keys | 9 | 62 | 8–12 d | NOT STARTED |
+| `R-04` | `LipekSecurityPlugin` — TOTP, WebAuthn, MFA recovery, audit log | 6 | 44 | 5–8 d | **IN PROGRESS** (7 Sep) — 6 entities, guarded migration, audit-log service + Admin API behind `ReadAuditLog`. Auth ceremonies (`ADR-0006`/`ADR-0008`) outstanding |
 | `R-05` | `AppointmentsPlugin` — resources, slots, bookings | 3 | 27 | 3–5 d | NOT STARTED |
 | `R-06` | `TailoringPlugin` — jobs, configurations, measurements, production timeline, fittings | 6 | 73 | 8–12 d | NOT STARTED |
 | `R-07` | Commerce operations & `DocumentsPlugin` — returns, gift cards, documents, payment webhooks | 5 | 58 | 4–6 d | NOT STARTED |
@@ -126,7 +126,12 @@ Effort is order-of-magnitude sizing for one engineer fluent in Vendure plugin au
 | `R-13` | `CustomerExperiencePlugin` — product alerts | 2 | 22 | 2–3 d | NOT STARTED |
 | `R-14` | `AnalyticsEventsPlugin` — canonical event record | 1 | 6 | 1–2 d | NOT STARTED |
 | `R-15` | AI action approvals (Phase 9/10 gated) | 1 | 13 | 2–3 d | NOT STARTED |
-| | **Remaining total** | **69** | **712** | **61–93 d** | |
+| | **Remaining total** | **66** | **694** | **56–87 d** | |
+
+**Scope correction (7 Sep):** `api_key`, `api_key_translation` and
+`api_key_channels_channel` are **Vendure 3.7 core entities**, not LIPEK ones —
+core ships them with its own Dashboard screens. They were wrongly counted in
+`R-04`, which is 6 tables and 44 columns, not 9 and 62.
 
 ### 5.1 Sequencing
 
