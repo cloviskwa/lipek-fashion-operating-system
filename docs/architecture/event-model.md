@@ -16,6 +16,9 @@ ReturnRequested, RefundCompleted
 TailoringStarted, FittingScheduled, TailoringCompleted
 LaundryCollected, LaundryCompleted, LaundryDelivered
 AlterationStarted, AlterationCompleted
+AppointmentBooked, AppointmentRescheduled, AppointmentCancelled, AppointmentCompleted
 ```
 
 Each state-machine transition (Tailoring/Alterations/Laundry, source of truth §9A) emits its own event beyond this seed list — recorded here as each plugin's `*-002` state-machine task lands. Consumers: `CONTENT-007` (cache revalidation), `OPS-001`/`OPS-002` (analytics), `CRM-009` (marketing automation), `AI-007` (human handoff triggers).
+
+The appointment events (`R-05`, AppointmentsPlugin) are published on the booking lifecycle — `AppointmentBooked` when a slot is reserved, `AppointmentRescheduled` when it moves to another slot (carrying the vacated slot id), `AppointmentCancelled` when it is cancelled, `AppointmentCompleted` when staff close it out. They are the slot-level events; the seed list's `FittingScheduled` remains the tailoring plugin's job-level event, which will accompany a fitting booking made through this plugin.

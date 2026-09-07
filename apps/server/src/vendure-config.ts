@@ -16,11 +16,19 @@ import { CustomerExperiencePlugin } from './plugins/customer-experience/customer
 import { LipekContentPlugin } from './plugins/lipek-content/lipek-content.plugin';
 import { customFields } from './custom-fields';
 import { LipekSecurityPlugin } from './plugins/lipek-security/lipek-security.plugin';
+import { LipekNativeMfaAuthenticationStrategy } from './plugins/lipek-security/lipek-native-mfa.authentication-strategy';
+import { AppointmentsPlugin } from './plugins/appointments/appointments.plugin';
 
 const IS_DEV = process.env.APP_ENV === 'dev';
 // PORT wins because hosting platforms inject it into the environment at runtime, and that
 // must take precedence over any value baked into the .env file at scaffold time.
 const serverPort = +process.env.PORT || +process.env.VENDURE_SERVER_PORT || 3000;
+
+// The MFA-aware replacement for Vendure's native strategy (`R-04`, ADR-0006).
+// Registered under the same 'native' name for both APIs, REPLACING the
+// built-in strategy — leaving the stock native strategy registered would be
+// a complete MFA bypass. One shared instance; Vendure calls init() on it.
+const lipekAuthenticationStrategy = new LipekNativeMfaAuthenticationStrategy();
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -38,6 +46,8 @@ export const config: VendureConfig = {
     },
     authOptions: {
         tokenMethod: ['bearer', 'cookie'],
+        shopAuthenticationStrategy: [lipekAuthenticationStrategy],
+        adminAuthenticationStrategy: [lipekAuthenticationStrategy],
         superadminCredentials: {
             identifier: process.env.SUPERADMIN_USERNAME,
             password: process.env.SUPERADMIN_PASSWORD,
@@ -70,7 +80,7 @@ export const config: VendureConfig = {
     customFields,
     plugins: [
         LipekSecurityPlugin,
-        LipekContentPlugin,
+        AppointmentsPlugin,        LipekContentPlugin,
         CustomerExperiencePlugin,
         GraphiqlPlugin.init(),
         AssetServerPlugin.init({

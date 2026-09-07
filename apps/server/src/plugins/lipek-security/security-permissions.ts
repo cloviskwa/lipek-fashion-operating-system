@@ -12,3 +12,14 @@ export const readAuditLogPermission = new PermissionDefinition({
     name: 'ReadAuditLog',
     description: 'Grants permission to read the LIPEK security audit log',
 });
+
+/**
+ * Support-flow permission for issuing MFA recovery codes to locked-out
+ * users (`SEC-004`). Deliberately separate from the superadmin builtin: the
+ * least-privileged role that can run MFA recovery should be grantable on its
+ * own, and its use is auditable through the shared audit trail.
+ */
+export const manageMfaRecoveryPermission = new PermissionDefinition({
+    name: 'ManageMfaRecovery',
+    description: 'Grants permission to issue MFA recovery codes for locked-out users',
+});

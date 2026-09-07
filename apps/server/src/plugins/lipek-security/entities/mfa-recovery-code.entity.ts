@@ -12,6 +12,8 @@ import { Column, Entity, Index, ManyToOne } from 'typeorm';
  * safe to read out over a support channel.
  *
  * Stored as a hash — the plaintext exists only in the response that issues it.
+ * `userId` is UNIQUE in the surviving schema: a user holds at most one
+ * recovery code at a time; re-issuance replaces the previous one.
  */
 @Entity()
 export class MfaRecoveryCode extends VendureEntity {
@@ -25,7 +27,7 @@ export class MfaRecoveryCode extends VendureEntity {
     @Column({ type: 'timestamp' })
     expiresAt: Date;
 
-    @Index()
+    @Index({ unique: true })
     @ManyToOne(() => User, { onDelete: 'CASCADE' })
     user: User;
 

@@ -3,10 +3,17 @@ import { EntityId, User, VendureEntity } from '@vendure/core';
 import { Column, Entity, Index, ManyToOne } from 'typeorm';
 
 /**
- * A registered passkey / security key (`SEC-003`, `ADR-0006`).
+ * A registered passkey / security key (`SEC-002`, `ADR-0006`).
  *
  * Only public key material is stored, so a database disclosure does not let
  * an attacker authenticate as the user.
+ *
+ * Surviving-schema constraints (authoritative over the entity design):
+ * `credentialId` is UNIQUE — a credential can only ever be registered once,
+ * platform-wide — and there is deliberately **no** index on `userId` and no
+ * `ON DELETE` action on the user relation, so deleting a user with live
+ * passkeys is blocked rather than silently cascading; credentials must be
+ * removed first.
  */
 @Entity()
 export class WebAuthnCredential extends VendureEntity {
@@ -15,6 +22,7 @@ export class WebAuthnCredential extends VendureEntity {
     }
 
     /** Base64url credential id issued by the authenticator. */
+    @Index({ unique: true })
     @Column()
     credentialId: string;
 
@@ -45,8 +53,7 @@ export class WebAuthnCredential extends VendureEntity {
     @Column()
     nickname: string;
 
-    @Index()
-    @ManyToOne(() => User, { onDelete: 'CASCADE' })
+    @ManyToOne(() => User)
     user: User;
 
     @EntityId()

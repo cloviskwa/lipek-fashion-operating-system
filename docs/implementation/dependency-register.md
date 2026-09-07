@@ -29,6 +29,9 @@ Phase 1A (`FOUND-013`–`FOUND-015`) is complete. `apps/server` and `apps/storef
 | `graphql-tag`                  | 2.12.7            | `gql` template tag for plugin schema extensions | runtime | MIT                                                             | `CONTENT-005`                                                                      |
 | `@vendure/common`              | 3.7.2             | Shared `ID`/`DeepPartial` types used by entities | runtime | GPL-3.0-or-later                                               | `CONTENT-005`                                                                      |
 | `reflect-metadata`             | 0.2.2             | Decorator metadata reflection required by Nest/TypeORM | runtime | Apache-2.0                                               | `CONTENT-005`                                                                      |
+| `otplib`                       | 13.4.1            | RFC 6238 TOTP generation/verification for the MFA fallback factor (version re-verified against the npm registry at install time; 13.5.0 available — minor bump left for a later pass) | runtime | MIT | `R-04` (`SEC-003`) |
+| `@simplewebauthn/server`       | 13.3.2            | WebAuthn/passkey registration + assertion verification for the primary MFA factor (version pinned to the master plan's re-verified release; 14.0.1 exists — major bump needs its own compat check per the do-not list) | runtime | MIT | `R-04` (`SEC-002`) |
+| `@simplewebauthn/browser`      | 13.3.0            | Browser-side WebAuthn ceremonies for the Dashboard's passkey UI | dev | MIT | `R-04` (`SEC-002`) |
 
 
 > **Why these seven were added (`CONTENT-005`).** They are the standard Vendure
