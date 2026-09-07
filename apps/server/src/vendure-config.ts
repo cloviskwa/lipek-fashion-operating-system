@@ -18,6 +18,7 @@ import { customFields } from './custom-fields';
 import { LipekSecurityPlugin } from './plugins/lipek-security/lipek-security.plugin';
 import { LipekNativeMfaAuthenticationStrategy } from './plugins/lipek-security/lipek-native-mfa.authentication-strategy';
 import { AppointmentsPlugin } from './plugins/appointments/appointments.plugin';
+import { TailoringPlugin } from './plugins/tailoring/tailoring.plugin';
 
 const IS_DEV = process.env.APP_ENV === 'dev';
 // PORT wins because hosting platforms inject it into the environment at runtime, and that
@@ -80,7 +81,8 @@ export const config: VendureConfig = {
     customFields,
     plugins: [
         LipekSecurityPlugin,
-        AppointmentsPlugin,        LipekContentPlugin,
+        AppointmentsPlugin,
+        TailoringPlugin,        LipekContentPlugin,
         CustomerExperiencePlugin,
         GraphiqlPlugin.init(),
         AssetServerPlugin.init({
