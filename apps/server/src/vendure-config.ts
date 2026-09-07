@@ -12,6 +12,9 @@ import { GraphiqlPlugin } from '@vendure/graphiql-plugin';
 import 'dotenv/config';
 import path from 'path';
 
+import { CustomerExperiencePlugin } from './plugins/customer-experience/customer-experience.plugin';
+import { LipekContentPlugin } from './plugins/lipek-content/lipek-content.plugin';
+import { customFields } from './custom-fields';
 import { LipekSecurityPlugin } from './plugins/lipek-security/lipek-security.plugin';
 
 const IS_DEV = process.env.APP_ENV === 'dev';
@@ -62,9 +65,13 @@ export const config: VendureConfig = {
     },
     // When adding or altering custom field definitions, the database will
     // need to be updated. See the "Migrations" section in README.md.
-    customFields: {},
+    // Definitions live in ./custom-fields.ts -- they restore declarations for
+    // columns that already exist in the database (rebuild task R-01).
+    customFields,
     plugins: [
         LipekSecurityPlugin,
+        LipekContentPlugin,
+        CustomerExperiencePlugin,
         GraphiqlPlugin.init(),
         AssetServerPlugin.init({
             route: 'assets',

@@ -22,11 +22,26 @@ function parseAllowList(envValue: string | undefined, fallback: readonly string[
         .filter(Boolean);
 }
 
-// Local dev default: only the storefront's own dev origin needs cross-origin access.
-// The Dashboard and GraphiQL are served by apps/server itself (same-origin, no CORS
-// needed). Production origins are supplied via LIPEK_ALLOWED_ORIGINS (comma-separated)
-// once real domains exist -- never widen this by editing the fallback for a one-off need.
-const allowedOrigins = parseAllowList(process.env.LIPEK_ALLOWED_ORIGINS, ['http://localhost:3001']);
+// Local dev defaults. Two origins genuinely need cross-origin access to the API:
+//
+//   :3001  the storefront's Next.js dev server
+//   :5173  the Dashboard's Vite dev server
+//
+// The Dashboard is same-origin only when it is served from a production build by
+// apps/server itself. Under `vendure dev all` it is served by Vite on its own port,
+// so its calls to the Admin API are cross-origin and must be allowed or the sign-in
+// request fails in the browser with "Failed to fetch". If Vite falls back to another
+// port because 5173 is taken, add that origin via LIPEK_ALLOWED_ORIGINS.
+//
+// These defaults are dev-only and are dropped outside `APP_ENV=dev`. Production
+// origins are supplied via LIPEK_ALLOWED_ORIGINS (comma-separated) once real domains
+// exist -- never add a production origin to this fallback.
+const DEV_ORIGINS = ['http://localhost:3001', 'http://localhost:5173'];
+
+const allowedOrigins = parseAllowList(
+    process.env.LIPEK_ALLOWED_ORIGINS,
+    process.env.APP_ENV === 'dev' ? DEV_ORIGINS : [],
+);
 
 // Typed structurally against Vendure's `ApiOptions.cors` (`boolean | CorsOptions`
 // from the underlying `cors`/Express ecosystem) at the point of use in

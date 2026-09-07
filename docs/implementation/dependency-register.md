@@ -22,6 +22,21 @@ Phase 1A (`FOUND-013`–`FOUND-015`) is complete. `apps/server` and `apps/storef
 | `ts-node`                      | 10.9.2            | TS execution for CLI tasks                    | dev     | MIT                                                              | `FOUND-014`                                                                        |
 | `typescript`                   | **5.8.2** (exact) | Type safety                                   | dev     | Apache-2.0                                                       | `FOUND-014`; see `ADR-0012` amendment — kept as generated, not forced to 5.9.x/6.x |
 | `vite`                         | 7.3.6             | Dashboard build engine                        | dev     | MIT                                                              | `FOUND-014`                                                                        |
+| `@nestjs/common`               | 11.2.1            | Nest DI/decorators for plugin services (peer of `@vendure/core`) | runtime | MIT                                           | `CONTENT-005`                                                                      |
+| `@nestjs/graphql`              | 13.1.0            | `@Resolver`/`@Query`/`@Mutation` decorators for plugin API extensions | runtime | MIT                                   | `CONTENT-005`                                                                      |
+| `typeorm`                      | 0.3.31            | Entity/column decorators and migrations for plugin entities | runtime | MIT                                                | `CONTENT-005`                                                                      |
+| `graphql`                      | 16.14.2           | GraphQL runtime (peer of the Nest GraphQL stack) | runtime | MIT                                                            | `CONTENT-005`                                                                      |
+| `graphql-tag`                  | 2.12.7            | `gql` template tag for plugin schema extensions | runtime | MIT                                                             | `CONTENT-005`                                                                      |
+| `@vendure/common`              | 3.7.2             | Shared `ID`/`DeepPartial` types used by entities | runtime | GPL-3.0-or-later                                               | `CONTENT-005`                                                                      |
+| `reflect-metadata`             | 0.2.2             | Decorator metadata reflection required by Nest/TypeORM | runtime | Apache-2.0                                               | `CONTENT-005`                                                                      |
+
+
+> **Why these seven were added (`CONTENT-005`).** They are the standard Vendure
+> plugin-authoring peer set. `@vendure/core` depends on all of them, but pnpm's
+> strict `node_modules` layout means a *plugin in `apps/server`* cannot import
+> them transitively — they must be direct dependencies of the app that writes
+> plugin code. Each version is pinned to the range `@vendure/core@3.7.2` itself
+> declares, so no second copy of Nest, TypeORM or GraphQL is introduced.
 
 ### `apps/storefront` (`@lipek/storefront`)
 

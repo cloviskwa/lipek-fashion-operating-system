@@ -12,6 +12,7 @@
     "signIn": "Sign in",
     "signOut": "Sign out",
     "greeting": "Hi, {name}",
+    "wishlist": "Wishlist",
     "shoppingCart": "Shopping Cart",
     "switchLanguage": "Switch language",
     "switchCurrency": "Switch currency"

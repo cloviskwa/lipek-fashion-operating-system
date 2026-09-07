@@ -1,0 +1,11 @@
+/**
+ * LIPEK theme entry point.
+ *
+ * `legacy-variables.css` holds the theme-invariant brand palette (ported from
+ * the retired prototype in FOUND-020). `semantic.css` maps that palette onto
+ * the semantic roles the apps actually consume, in paired light/dark values.
+ *
+ * Apps import this file; they must not redefine these tokens locally.
+ */
+@import "./legacy-variables.css";
+@import "./semantic.css";

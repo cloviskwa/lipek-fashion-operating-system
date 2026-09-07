@@ -8,6 +8,7 @@ This is the Claude Code entry point for the LIPEK platform monorepo. The full op
 2. [`docs/internal/LIPEK_MASTER_TECHNICAL_SOURCE_OF_TRUTH.md`](docs/internal/LIPEK_MASTER_TECHNICAL_SOURCE_OF_TRUTH.md) — the authoritative product/architecture specification
 3. [`docs/implementation/MASTER_IMPLEMENTATION_PLAN.md`](docs/implementation/MASTER_IMPLEMENTATION_PLAN.md) — the phase/task breakdown; find the current phase and pick up the next `NOT STARTED` task in order
 4. [`docs/implementation/ADR_BACKLOG.md`](docs/implementation/ADR_BACKLOG.md) and [`docs/adr/`](docs/adr/) — check whether the task you're about to start is gated on an unresolved decision before writing any code
+5. [`docs/implementation/BACKEND_REBUILD_PLAN.md`](docs/implementation/BACKEND_REBUILD_PLAN.md) — **required before any backend entity work.** The August 2026 backend was lost with unpushed commits but its database schema survived; rebuild tasks `R-01`…`R-15` write TypeScript to match tables that already exist, which inverts the usual migration flow
 
 ## Quick facts
 

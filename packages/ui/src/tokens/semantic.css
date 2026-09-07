@@ -1,0 +1,105 @@
+/**
+ * Semantic theme roles, expressed entirely in terms of the LIPEK brand
+ * palette in `legacy-variables.css` — every value here is a brand token or a
+ * mix of brand tokens, never a new colour.
+ *
+ * The role names match the shadcn/ui contract the storefront's components are
+ * written against, so wiring the brand in is a token change rather than a
+ * component rewrite.
+ *
+ * Light is the brand's default: warm cream ground, deep ink text, brass
+ * accent. Dark inverts ground and text and keeps the same brass accent.
+ * This is the paired light/dark structure `THEME-001` calls for.
+ */
+
+:root {
+  --background: var(--lipek-color-cream);
+  --foreground: var(--lipek-color-ink);
+
+  --card: var(--lipek-color-white);
+  --card-foreground: var(--lipek-color-ink);
+  --popover: var(--lipek-color-white);
+  --popover-foreground: var(--lipek-color-ink);
+
+  /* Primary is ink rather than brass: the design spec asks for "luxury
+     through restraint", with brass reserved for accent and focus. */
+  --primary: var(--lipek-color-ink);
+  --primary-foreground: var(--lipek-color-cream);
+
+  --secondary: var(--lipek-color-cream-deep);
+  --secondary-foreground: var(--lipek-color-ink);
+
+  --muted: var(--lipek-color-cream-deep);
+  --muted-foreground: var(--lipek-color-ink-soft);
+
+  --accent: var(--lipek-color-gold);
+  --accent-foreground: var(--lipek-color-ink);
+
+  --destructive: var(--lipek-color-clay);
+  --success: var(--lipek-color-success);
+
+  --border: var(--lipek-color-line);
+  --input: var(--lipek-color-line);
+  --ring: var(--lipek-color-gold);
+
+  --chart-1: var(--lipek-color-gold);
+  --chart-2: var(--lipek-color-ink-soft);
+  --chart-3: var(--lipek-color-clay);
+  --chart-4: var(--lipek-color-gold-dark);
+  --chart-5: var(--lipek-color-success);
+
+  --sidebar: var(--lipek-color-cream-deep);
+  --sidebar-foreground: var(--lipek-color-ink);
+  --sidebar-primary: var(--lipek-color-ink);
+  --sidebar-primary-foreground: var(--lipek-color-cream);
+  --sidebar-accent: var(--lipek-color-gold);
+  --sidebar-accent-foreground: var(--lipek-color-ink);
+  --sidebar-border: var(--lipek-color-line);
+  --sidebar-ring: var(--lipek-color-gold);
+}
+
+.dark {
+  --background: var(--lipek-color-ink);
+  --foreground: var(--lipek-color-cream);
+
+  --card: var(--lipek-color-ink-soft);
+  --card-foreground: var(--lipek-color-cream);
+  --popover: var(--lipek-color-ink-soft);
+  --popover-foreground: var(--lipek-color-cream);
+
+  --primary: var(--lipek-color-cream);
+  --primary-foreground: var(--lipek-color-ink);
+
+  --secondary: var(--lipek-color-ink-soft);
+  --secondary-foreground: var(--lipek-color-cream);
+
+  --muted: var(--lipek-color-ink-soft);
+  /* Dimmed cream: readable secondary text on ink without introducing a
+     colour that is not in the brand palette. */
+  --muted-foreground: color-mix(in srgb, var(--lipek-color-cream) 68%, var(--lipek-color-ink));
+
+  --accent: var(--lipek-color-gold);
+  --accent-foreground: var(--lipek-color-ink);
+
+  --destructive: color-mix(in srgb, var(--lipek-color-clay) 80%, var(--lipek-color-cream));
+  --success: var(--lipek-color-success);
+
+  --border: color-mix(in srgb, var(--lipek-color-cream) 14%, transparent);
+  --input: color-mix(in srgb, var(--lipek-color-cream) 20%, transparent);
+  --ring: var(--lipek-color-gold);
+
+  --chart-1: var(--lipek-color-gold);
+  --chart-2: var(--lipek-color-cream-deep);
+  --chart-3: var(--lipek-color-clay);
+  --chart-4: var(--lipek-color-gold-dark);
+  --chart-5: var(--lipek-color-success);
+
+  --sidebar: var(--lipek-color-ink-soft);
+  --sidebar-foreground: var(--lipek-color-cream);
+  --sidebar-primary: var(--lipek-color-cream);
+  --sidebar-primary-foreground: var(--lipek-color-ink);
+  --sidebar-accent: var(--lipek-color-gold);
+  --sidebar-accent-foreground: var(--lipek-color-ink);
+  --sidebar-border: color-mix(in srgb, var(--lipek-color-cream) 14%, transparent);
+  --sidebar-ring: var(--lipek-color-gold);
+}

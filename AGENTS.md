@@ -14,13 +14,14 @@ This file is the standing operating contract for any coding agent (Claude Code, 
 
 Code may never silently redefine the product. If reality requires a change to the source of truth, write an ADR, get it approved, then update the source of truth (source of truth §0.1).
 
-**Before doing anything else in this repository, read `docs/internal/LIPEK_MASTER_TECHNICAL_SOURCE_OF_TRUTH.md` in full**, then `docs/implementation/MASTER_IMPLEMENTATION_PLAN.md` for the current phase/task you are picking up.
+**Before doing anything else in this repository, read `docs/internal/LIPEK_MASTER_TECHNICAL_SOURCE_OF_TRUTH.md` in full**, then `docs/implementation/MASTER_IMPLEMENTATION_PLAN.md` for the current phase/task you are picking up. **If your task touches the backend, read `docs/implementation/BACKEND_REBUILD_PLAN.md` as well** — the live database schema is ahead of the code and is authoritative over it.
 
 ## Where things are
 
 - `docs/internal/` — the source of truth. Never move this into any `public/`-servable path of any app.
 - `docs/architecture/`, `docs/domains/`, `docs/api/`, `docs/implementation/`, `docs/testing/`, `docs/operations/`, `docs/adr/` — derived/operational documentation. See `docs/implementation/DOCUMENTATION_MAP.md` for what belongs where and each document's authority level.
 - `docs/implementation/MASTER_IMPLEMENTATION_PLAN.md` — the phase/task breakdown (168 tasks, IDs like `FOUND-001`, `SEC-002`, `COM-013`). Work one task at a time against its stated acceptance criteria.
+- **`docs/implementation/BACKEND_REBUILD_PLAN.md` — read this before writing any backend entity.** Between 26–29 August 2026 the backend was built through Phase 10 and lost with unpushed commits; the PostgreSQL schema survived intact. Rebuild tasks are `R-01`…`R-15` and the database schema is **authoritative over your entity definitions** — the normal "design entity, then generate a migration" flow will corrupt a live schema here. Its §4 states the method; its §5 the task order.
 - `docs/implementation/ADR_BACKLOG.md` + `docs/adr/ADR-XXXX-*.md` — open and resolved architecture decisions.
 - The original static-content Next.js prototype has been retired (`FOUND-020`) after its reusable assets (design tokens, primitives, content fixtures, JSON-LD builder pattern) were ported into `packages/ui`, `packages/testing/fixtures`, and `apps/storefront/src/config`. Its route/IA inventory is preserved in `docs/architecture/storefront-architecture.md` for Phase 3 to build against — there is no `_reference/` directory anymore; do not recreate one as a place to stash old code "just in case."
 - `apps/mobile/customer/` — seeded from the prototype's Capacitor scaffold per `ADR-0007`. Not yet wired to a real storefront build.

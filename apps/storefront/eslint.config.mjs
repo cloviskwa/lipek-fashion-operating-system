@@ -6,11 +6,14 @@ const featureNames = [
   "cart",
   "checkout",
   "collections",
+  "content",
   "currency",
+  "navigation",
   "orders",
   "pricing",
   "products",
   "search",
+  "wishlist",
 ];
 
 function privateFeatureImportPattern(owner) {
