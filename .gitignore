@@ -25,6 +25,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+# captured dev-server / verification output (evidence is recorded in the plans, not the repo)
+*.log
 
 # local env files (every app)
 .env
